@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Mamba — Literary Works, Essays &amp; The Twitch Universe</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Classic Literary Editorial Fonts: Cormorant Garamond, Newsreader & Inter (micro-captions only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Warm Linen-Parchment & Deep Ultramarine Palette — Zero Pure Black */
+            linen: '#F7F4EE',
+            linenCard: '#FCFBF8',
+            linenSoft: '#EFECE3',
+            ultramarine: '#112456',
+            ultramarineDeep: '#0C1E4A',
+            plum: '#4B2378',
+            plumSoft: '#613394',
+            gold: '#C5942E',
+            goldLight: '#DDA940',
+            inkNavy: '#152347',
+            inkMuted: '#4F5A78',
+            /* High-Voltage Electric Accents for The Twitch Universe Timeline */
+            twitchBlue: '#0088FF',
+            twitchYellow: '#FFD600',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            serif: ['"Newsreader"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F7F4EE;
+      color: #152347;
+      font-family: 'Newsreader', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Soft Organic Paper Grain */
+    .linen-surface {
+      background-color: #F7F4EE;
+      background-image:
+        radial-gradient(circle at 18% 20%, rgba(252, 251, 248, 0.9) 0%, transparent 55%),
+        radial-gradient(circle at 82% 75%, rgba(239, 236, 227, 0.7) 0%, transparent 60%);
+    }
+
+    /* Soft Floating Editorial Card (No Sharp Borders) */
+    .organic-card {
+      border-radius: 30px;
+      box-shadow:
+        0 18px 45px -15px rgba(17, 36, 86, 0.08),
+        0 4px 16px -4px rgba(75, 35, 120, 0.04);
+      transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.38s ease;
+    }
+
+    .organic-card:hover {
+      box-shadow:
+        0 24px 55px -15px rgba(17, 36, 86, 0.13),
+        0 8px 22px -6px rgba(75, 35, 120, 0.07);
+    }
+
+    /* Deep Midnight Sapphire Atmospheric Canvas for The Twitch Universe */
+    .twitch-timeline-canvas {
+      background-color: #0C1E4A;
+      background-image:
+        radial-gradient(circle at 22% 18%, rgba(0, 136, 255, 0.24) 0%, transparent 52%),
+        radial-gradient(circle at 80% 52%, rgba(75, 35, 120, 0.32) 0%, transparent 55%),
+        radial-gradient(circle at 30% 85%, rgba(255, 214, 0, 0.12) 0%, transparent 48%);
+    }
+
+    /* 3D Tilting Hardcover Specimen with Rounded Spine Edge */
+    .book-specimen-3d {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.38s ease;
+      box-shadow:
+        -14px 22px 42px rgba(17, 36, 86, 0.28),
+        -4px 8px 16px rgba(75, 35, 120, 0.14),
+        inset 1px 0 2px rgba(255, 255, 255, 0.4);
+    }
+
+    .book-specimen-3d::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 14px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(17, 36, 86, 0.28) 42%,
+        rgba(255, 255, 255, 0.15) 58%,
+        rgba(17, 36, 86, 0.05) 100%
+      );
+      pointer-events: none;
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+
+    /* Unboxed Bibliography Row Pill Transition */
+    .bib-pill-row {
+      border-radius: 22px;
+      transition: background-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .bib-pill-row:hover,
+    .bib-pill-row.is-selected {
+      background-color: #112456;
+      color: #FCFBF8;
+      transform: translateX(6px);
+      box-shadow: 0 14px 32px -10px rgba(17, 36, 86, 0.32);
+    }
+
+    .bib-pill-row:hover .bib-sub,
+    .bib-pill-row.is-selected .bib-sub {
+      color: #DDA940;
+    }
+
+    /* Smooth Scrollytelling Chapter Card Transitions */
+    .scroll-chapter-card {
+      border-radius: 30px;
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .scroll-chapter-card.is-active {
+      background-color: #FCFBF8;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      box-shadow:
+        0 24px 55px -15px rgba(17, 36, 86, 0.14),
+        0 8px 22px -6px rgba(75, 35, 120, 0.08);
+    }
+
+    .scroll-chapter-card:not(.is-active) {
+      background-color: rgba(252, 251, 248, 0.48);
+      opacity: 0.52;
+      transform: scale(0.985);
+    }
+
+    /* Smooth 3D Book Jacket Transition on Scroll */
+    #pedestal-cover {
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background 0.45s ease, color 0.35s ease, box-shadow 0.4s ease;
+    }
+  </style>
+</head>
+<body class="linen-surface selection:bg-plum selection:text-linenCard">
+
+  <!-- ==================== 1. CLEAN, AIRY MINIMALIST HEADER ==================== -->
+  <header class="sticky top-0 z-40 px-4 sm:px-8 pt-4 sm:pt-5 pointer-events-none">
+    <div class="max-w-6xl mx-auto pointer-events-auto bg-linenCard/90 backdrop-blur-md rounded-full px-6 sm:px-8 py-3.5 shadow-[0_8px_30px_-10px_rgba(17,36,86,0.09)] flex items-center justify-between gap-4">
+      
+      <!-- Quiet Editorial Wordmark -->
+      <a href="#top" class="flex items-center gap-3 group shrink-0">
+        <span class="w-8 h-8 rounded-full bg-ultramarine text-goldLight font-display font-bold text-base flex items-center justify-center tracking-tight group-hover:bg-plum transition-colors">
+          GM
+        </span>
+        <span class="font-display font-semibold text-xl sm:text-2xl tracking-tight text-ultramarine">
+          General Mamba
+        </span>
+      </a>
+
+      <!-- Minimal Navigation Links -->
+      <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-6 lg:gap-8 font-sans text-sm font-medium text-inkNavy">
+        <a href="#bibliography" class="px-4 py-2 rounded-full hover:bg-linenSoft hover:text-plum transition-colors">
+          Works
+        </a>
+        <a href="#twitch-timeline" class="px-4 py-2 rounded-full hover:bg-ultramarine hover:text-twitchYellow transition-colors inline-flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-twitchBlue"></span>
+          <span>The Twitch Universe</span>
+        </a>
+        <a href="#broadcasts" class="px-4 py-2 rounded-full hover:bg-linenSoft hover:text-plum transition-colors">
+          YouTube &amp; Community
+        </a>
+        <a href="#editorial-footer" class="px-4 py-2 rounded-full hover:bg-linenSoft hover:text-plum transition-colors">
+          Letters
+        </a>
+      </nav>
+
+      <!-- Single Quiet Action + Mobile Menu Trigger -->
+      <div class="flex items-center gap-2.5">
+        <button onclick="openBuyModal('grace')" class="bg-ultramarine hover:bg-plum text-linenCard font-sans font-medium text-xs px-5 py-2.5 rounded-full transition-colors">
+          Books
+        </button>
+
+        <button onclick="toggleMobileNav()" aria-label="Open Navigation Menu" class="md:hidden w-9 h-9 rounded-full bg-linenSoft text-ultramarine flex items-center justify-center hover:bg-ultramarine hover:text-linenCard transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M5 8h14M5 12h14M5 16h14"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Mobile Dropdown Card -->
+    <div id="mobile-nav" class="hidden md:hidden max-w-6xl mx-auto mt-2.5 pointer-events-auto bg-ultramarine text-linenCard rounded-[28px] p-7 shadow-2xl flex-col space-y-4 font-display text-xl">
+      <a href="#bibliography" onclick="toggleMobileNav()" class="hover:text-goldLight">Collected Works</a>
+      <a href="#twitch-timeline" onclick="toggleMobileNav()" class="text-twitchYellow">The Twitch Universe</a>
+      <a href="#broadcasts" onclick="toggleMobileNav()" class="hover:text-goldLight">YouTube &amp; Community</a>
+      <a href="#editorial-footer" onclick="toggleMobileNav()" class="hover:text-goldLight">Monthly Letters</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ==================== 2. ULTRA-MINIMALIST POETIC LITERARY HERO ==================== -->
+    <section class="min-h-[82vh] flex flex-col justify-center items-center text-center px-6 sm:px-10 py-24 sm:py-32 relative overflow-hidden">
+      <!-- Subtle, warm atmospheric glow -->
+      <div aria-hidden="true" class="w-[520px] h-[520px] rounded-full bg-gold/10 blur-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto relative z-10">
+        <!-- Single Poetic Serif Display Statement -->
+        <h1 class="font-display text-5xl sm:text-7xl lg:text-[86px] leading-[1.03] font-semibold tracking-tight text-ultramarine">
+          Words that carry <span class="italic font-normal text-plum">weight, grace,</span> and fire.
+        </h1>
+
+        <!-- Subtle Author Subtitle -->
+        <p class="font-serif italic text-lg sm:text-2xl text-inkMuted mt-7 sm:mt-8 max-w-2xl mx-auto leading-relaxed">
+          General Mamba — Essayist, Novelist &amp; Creator of The Twitch Universe
+        </p>
+
+        <!-- Two Quiet, Refined Action Links -->
+        <div class="mt-11 sm:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <a href="#bibliography" class="bg-ultramarine hover:bg-plum text-linenCard font-sans font-medium text-xs sm:text-sm px-7 py-3.5 rounded-full transition-colors shadow-sm">
+            Explore the Works &darr;
+          </a>
+          <a href="#twitch-timeline" class="bg-linenCard hover:bg-gold/20 text-ultramarine font-sans font-medium text-xs sm:text-sm px-7 py-3.5 rounded-full transition-colors shadow-xs">
+            Enter The Twitch Universe &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. SCROLL-DRIVEN 'COLLECTED BIBLIOGRAPHY' (STICKY SCROLLYTELLING 001–006) ==================== -->
+    <section id="bibliography" class="py-22 sm:py-32 px-4 sm:px-8 bg-linenCard/75 rounded-t-[40px]">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Quiet Section Header -->
+        <div class="max-w-2xl mb-14 sm:mb-20">
+          <span class="font-sans text-[11px] uppercase tracking-[0.22em] text-plum font-semibold">
+            Collected Bibliography &bull; 001 – 006
+          </span>
+          <h2 class="font-display text-4xl sm:text-6xl font-semibold text-ultramarine mt-2">
+            Selected &amp; <span class="italic font-normal text-plum">Forthcoming Works</span>
+          </h2>
+          <p class="font-serif text-base sm:text-lg text-inkMuted mt-3 leading-relaxed">
+            Scroll naturally through the archive—each volume reveals its edition on the pedestal as you move down the page.
+          </p>
+        </div>
+
+        <!-- Sticky Two-Column Scrollytelling Stage -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          <!-- LEFT COLUMN (5 cols): Pinned/Sticky 3D Hardcover Pedestal -->
+          <div class="lg:col-span-5 lg:sticky lg:top-28 organic-card bg-linen p-7 sm:p-9">
+            <div class="flex items-center justify-between font-sans text-[10.5px] uppercase tracking-[0.2em] text-inkMuted mb-5">
+              <span id="pedestal-kicker" class="text-plum font-semibold">001 &bull; Hardcover Memoir</span>
+              <span id="pedestal-counter" class="text-ultramarine font-semibold">01 / 06</span>
+            </div>
+
+            <!-- Interactive 3D Tilt & Scroll-Reactive Book Stage -->
+            <div
+              id="pedestal-stage"
+              onmousemove="tiltPedestalBook(event)"
+              onmouseleave="resetPedestalBook()"
+              class="py-10 rounded-[26px] bg-linenSoft/90 flex items-center justify-center mb-6 relative"
+              style="perspective: 950px;"
+            >
+              <div id="pedestal-cover" class="book-specimen-3d aspect-[2/3] w-48 sm:w-52 rounded-[16px] bg-ultramarine text-linenCard p-6 flex flex-col justify-between">
+                <div class="pl-2">
+                  <span id="pedestal-badge" class="block font-sans text-[8px] uppercase tracking-widest text-goldLight font-semibold">
+                    NYT Bestseller
+                  </span>
+                  <div class="w-6 h-[1.5px] bg-gold mt-1.5 rounded-full"></div>
+                </div>
+                <div class="pl-2 my-auto">
+                  <h3 id="pedestal-cover-title" class="font-display text-2xl sm:text-3xl leading-[1.06] font-bold">
+                    The Weight<br><span class="italic font-normal text-goldLight">&amp;</span> The Grace
+                  </h3>
+                </div>
+                <div class="pl-2">
+                  <span class="font-sans text-[8px] uppercase tracking-[0.26em] text-linenCard/75">General Mamba</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Book Actions & Quick Progress Dots -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <h3 id="pedestal-title" class="font-display text-2xl sm:text-3xl font-semibold text-ultramarine leading-tight">
+                The Weight &amp; The Grace
+              </h3>
+
+              <!-- Clickable Progress Dots (001-006) -->
+              <div class="flex items-center gap-1.5 shrink-0" aria-label="Jump to book">
+                <button onclick="scrollToChapter('grace')" id="dot-grace" aria-label="Jump to 001" class="w-2.5 h-2.5 rounded-full bg-ultramarine transition-all"></button>
+                <button onclick="scrollToChapter('nextchapter')" id="dot-nextchapter" aria-label="Jump to 002" class="w-2 h-2 rounded-full bg-ultramarine/25 hover:bg-plum transition-all"></button>
+                <button onclick="scrollToChapter('bornbold')" id="dot-bornbold" aria-label="Jump to 003" class="w-2 h-2 rounded-full bg-ultramarine/25 hover:bg-plum transition-all"></button>
+                <button onclick="scrollToChapter('unseenbridge')" id="dot-unseenbridge" aria-label="Jump to 004" class="w-2 h-2 rounded-full bg-ultramarine/25 hover:bg-plum transition-all"></button>
+                <button onclick="scrollToChapter('youngsinner')" id="dot-youngsinner" aria-label="Jump to 005" class="w-2 h-2 rounded-full bg-ultramarine/25 hover:bg-plum transition-all"></button>
+                <button onclick="scrollToChapter('sermonssalt')" id="dot-sermonssalt" aria-label="Jump to 006" class="w-2 h-2 rounded-full bg-ultramarine/25 hover:bg-plum transition-all"></button>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <button id="pedestal-buy-btn" onclick="openBuyModal('grace')" class="flex-1 bg-ultramarine hover:bg-plum text-linenCard font-sans font-semibold text-xs py-3.5 px-5 rounded-full transition-colors">
+                Acquire Edition &rarr;
+              </button>
+              <button id="pedestal-excerpt-btn" onclick="openExcerptModal('grace')" class="bg-linenCard hover:bg-gold/25 text-ultramarine font-sans font-semibold text-xs py-3.5 px-5 rounded-full transition-colors shadow-xs">
+                Read Excerpt
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (7 cols): Tall Scroll-Driven Story & Details Track (001–006) -->
+          <div class="lg:col-span-7 space-y-10 sm:space-y-16 lg:pb-24">
+            
+            <!-- Scroll Chapter 001 -->
+            <article data-book-key="grace" id="chapter-grace" onclick="scrollToChapter('grace')" class="scroll-chapter-card is-active p-8 sm:p-11 cursor-pointer">
+              <div class="flex items-center justify-between font-sans text-xs uppercase tracking-widest text-plum font-semibold mb-3">
+                <span>001 &bull; Memoir</span>
+                <span>2024</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-5xl font-semibold text-ultramarine">
+                The Weight &amp; The Grace
+              </h3>
+              <p class="font-serif italic text-lg text-plum mt-1">
+                A Memoir of Faith, Fatherhood &amp; Southern Heritage
+              </p>
+              <p class="font-serif text-base sm:text-lg leading-relaxed text-inkMuted mt-4">
+                A deeply moving memoir examining fatherhood, Southern pulpit heritage, and the quiet grace required to set heavy burdens down. Across three generations in coastal South Carolina and Brooklyn, General Mamba traces how silence shapes a family—and what happens when we finally speak.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <button onclick="event.stopPropagation(); openExcerptModal('grace')" class="bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  Read Opening Passage
+                </button>
+                <button onclick="event.stopPropagation(); openBuyModal('grace')" class="text-plum hover:text-ultramarine font-sans text-xs font-semibold px-3 py-2.5">
+                  Choose Bookseller &rarr;
+                </button>
+              </div>
+            </article>
+
+            <!-- Scroll Chapter 002 -->
+            <article data-book-key="nextchapter" id="chapter-nextchapter" onclick="scrollToChapter('nextchapter')" class="scroll-chapter-card p-8 sm:p-11 cursor-pointer">
+              <div class="flex items-center justify-between font-sans text-xs uppercase tracking-widest text-plum font-semibold mb-3">
+                <span>002 &bull; Essays</span>
+                <span>2025</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-5xl font-semibold text-ultramarine">
+                The Next Chapter
+              </h3>
+              <p class="font-serif italic text-lg text-plum mt-1">
+                Twelve Essays on Renewal &amp; Civic Courage
+              </p>
+              <p class="font-serif text-base sm:text-lg leading-relaxed text-inkMuted mt-4">
+                Twelve luminous essays on reinvention, civic courage, and building enduring institutions in uncertain times. Written between front-porch conversations and late-night train rides, these meditations ask what communities owe the generations waiting just beyond the door.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <button onclick="event.stopPropagation(); openExcerptModal('nextchapter')" class="bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  Read Opening Passage
+                </button>
+                <button onclick="event.stopPropagation(); openBuyModal('nextchapter')" class="text-plum hover:text-ultramarine font-sans text-xs font-semibold px-3 py-2.5">
+                  Choose Bookseller &rarr;
+                </button>
+              </div>
+            </article>
+
+            <!-- Scroll Chapter 003 -->
+            <article data-book-key="bornbold" id="chapter-bornbold" onclick="scrollToChapter('bornbold')" class="scroll-chapter-card p-8 sm:p-11 cursor-pointer">
+              <div class="flex items-center justify-between font-sans text-xs uppercase tracking-widest text-plum font-semibold mb-3">
+                <span>003 &bull; Cultural Prose</span>
+                <span>2023</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-5xl font-semibold text-ultramarine">
+                Born Bold
+              </h3>
+              <p class="font-serif italic text-lg text-plum mt-1">
+                Portraits of Quiet Visionaries &amp; Artists
+              </p>
+              <p class="font-serif text-base sm:text-lg leading-relaxed text-inkMuted mt-4">
+                Intimate literary portraits of artists, choir directors, teachers, and neighborhood builders who refused to shrink to fit the room. Winner of the Whiting Award in Nonfiction, <span class="italic">Born Bold</span> celebrates the unheralded architects of American cultural life.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <button onclick="event.stopPropagation(); openExcerptModal('bornbold')" class="bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  Read Opening Passage
+                </button>
+                <button onclick="event.stopPropagation(); openBuyModal('bornbold')" class="text-plum hover:text-ultramarine font-sans text-xs font-semibold px-3 py-2.5">
+                  Choose Bookseller &rarr;
+                </button>
+              </div>
+            </article>
+
+            <!-- Scroll Chapter 004 -->
+            <article data-book-key="unseenbridge" id="chapter-unseenbridge" onclick="scrollToChapter('unseenbridge')" class="scroll-chapter-card p-8 sm:p-11 cursor-pointer">
+              <div class="flex items-center justify-between font-sans text-xs uppercase tracking-widest text-plum font-semibold mb-3">
+                <span>004 &bull; Narrative History</span>
+                <span>2021</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-5xl font-semibold text-ultramarine">
+                The Unseen Bridge
+              </h3>
+              <p class="font-serif italic text-lg text-plum mt-1">
+                Coastal South Carolina &amp; The Great Migration
+              </p>
+              <p class="font-serif text-base sm:text-lg leading-relaxed text-inkMuted mt-4">
+                Tracing the hidden generational links between Lowcountry tidal towns and northern industrial cities—told through handwritten letters, church ledgers, and family recipes carried northward in cardboard suitcases.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <button onclick="event.stopPropagation(); openExcerptModal('unseenbridge')" class="bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  Read Opening Passage
+                </button>
+                <button onclick="event.stopPropagation(); openBuyModal('unseenbridge')" class="text-plum hover:text-ultramarine font-sans text-xs font-semibold px-3 py-2.5">
+                  Choose Bookseller &rarr;
+                </button>
+              </div>
+            </article>
+
+            <!-- Scroll Chapter 005 -->
+            <article data-book-key="youngsinner" id="chapter-youngsinner" onclick="scrollToChapter('youngsinner')" class="scroll-chapter-card p-8 sm:p-11 cursor-pointer">
+              <div class="flex items-center justify-between font-sans text-xs uppercase tracking-widest text-plum font-semibold mb-3">
+                <span>005 &bull; Epistolary</span>
+                <span>2022</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-5xl font-semibold text-ultramarine">
+                Letters to a Young Sinner
+              </h3>
+              <p class="font-serif italic text-lg text-plum mt-1">
+                Epistles on Doubt, Art &amp; Moral Imagination
+              </p>
+              <p class="font-serif text-base sm:text-lg leading-relaxed text-inkMuted mt-4">
+                Written in the tradition of Baldwin and Rilke, twenty-four candid letters addressed to a young writer wrestling with inherited doctrine, creative ambition, and the discipline of mercy.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <button onclick="event.stopPropagation(); openExcerptModal('youngsinner')" class="bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  Read Opening Passage
+                </button>
+                <button onclick="event.stopPropagation(); openBuyModal('youngsinner')" class="text-plum hover:text-ultramarine font-sans text-xs font-semibold px-3 py-2.5">
+                  Choose Bookseller &rarr;
+                </button>
+              </div>
+            </article>
+
+            <!-- Scroll Chapter 006 -->
+            <article data-book-key="sermonssalt" id="chapter-sermonssalt" onclick="scrollToChapter('sermonssalt')" class="scroll-chapter-card p-8 sm:p-11 cursor-pointer">
+              <div class="flex items-center justify-between font-sans text-xs uppercase tracking-widest text-gold font-semibold mb-3">
+                <span>006 &bull; Forthcoming Prose</span>
+                <span>Spring 2027</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-5xl font-semibold text-ultramarine">
+                Sunday Sermons &amp; Salt
+              </h3>
+              <p class="font-serif italic text-lg text-plum mt-1">
+                A Meditation on Tide, Table &amp; Spoken Word
+              </p>
+              <p class="font-serif text-base sm:text-lg leading-relaxed text-inkMuted mt-4">
+                A lyrical study of coastal sanctuaries, Sunday dinner tables, and the cadence of Southern oratory—exploring how food, sea air, and spoken rhythm preserve memory across centuries.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <button onclick="event.stopPropagation(); openExcerptModal('sermonssalt')" class="bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-5 py-2.5 rounded-full transition-colors">
+                  Preview Prologue
+                </button>
+                <button onclick="event.stopPropagation(); openBuyModal('sermonssalt')" class="text-plum hover:text-ultramarine font-sans text-xs font-semibold px-3 py-2.5">
+                  Pre-Order Edition &rarr;
+                </button>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. DEDICATED 'THE TWITCH UNIVERSE' VERTICAL CHRONOLOGICAL TIMELINE ==================== -->
+    <section id="twitch-timeline" class="twitch-timeline-canvas text-linenCard py-22 sm:py-32 px-4 sm:px-8 rounded-[40px] mx-2 sm:mx-5 my-4 shadow-2xl">
+      <div class="max-w-5xl mx-auto">
+        
+        <!-- Centered Chapter Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+          <span class="inline-flex items-center gap-2 bg-twitchBlue/25 text-twitchYellow font-sans text-[10.5px] uppercase tracking-[0.24em] font-semibold px-4 py-1.5 rounded-full mb-4">
+            <span>&#9889;</span>
+            <span>The Twitch Universe &bull; Three-Volume Saga</span>
+          </span>
+          <h2 class="font-display text-4xl sm:text-6xl font-semibold leading-[1.05] text-linenCard">
+            An Electric Chronicle in <span class="italic font-normal text-twitchYellow">Three Movements</span>
+          </h2>
+          <p class="font-serif text-base sm:text-lg text-linenCard/80 mt-4 leading-relaxed">
+            Follow the chronological arc of General Mamba’s speculative thriller trilogy—set along a fractured coastal power grid where aging copper lines store human voices and every blackout demands a reckoning.
+          </p>
+        </div>
+
+        <!-- VERTICAL CHRONOLOGICAL TIMELINE -->
+        <div class="relative">
+          
+          <!-- Glowing Electric Blue & Yellow Vertical Spine -->
+          <div aria-hidden="true" class="absolute left-6 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-twitchBlue via-twitchYellow to-twitchBlue rounded-full md:-translate-x-1/2 shadow-[0_0_18px_rgba(0,136,255,0.75)]"></div>
+
+          <div class="space-y-14 sm:space-y-20">
+
+            <!-- ========== TIMELINE STAGE I: VOLUME I (OUT NOW) ========== -->
+            <div class="relative pl-16 md:pl-0 md:grid md:grid-cols-12 md:gap-10 items-center">
+              
+              <!-- Glowing Timeline Node I -->
+              <div class="absolute left-1.5 md:left-1/2 top-6 md:top-1/2 w-10 h-10 rounded-full bg-ultramarineDeep border-2 border-twitchYellow text-twitchYellow font-display font-bold text-lg flex items-center justify-center md:-translate-x-1/2 md:-translate-y-1/2 shadow-[0_0_20px_rgba(255,214,0,0.65)] z-10">
+                I
+              </div>
+
+              <!-- Left Side (Desktop): Floating Hardcover Book I -->
+              <div class="md:col-span-5 flex justify-start md:justify-end mb-6 md:mb-0">
+                <button onclick="openBuyModal('twitch1')" class="group focus:outline-none">
+                  <div class="book-specimen-3d aspect-[2/3] w-44 sm:w-48 rounded-[16px] bg-gradient-to-br from-twitchBlue via-ultramarine to-ultramarineDeep p-5 flex flex-col justify-between text-left group-hover:-translate-y-2 transition-transform">
+                    <div class="pl-2">
+                      <span class="block font-sans text-[7.5px] uppercase tracking-widest text-twitchYellow font-bold">The Twitch Universe</span>
+                      <div class="w-6 h-[1.5px] bg-twitchYellow mt-1.5 rounded-full"></div>
+                    </div>
+                    <div class="pl-2 my-auto">
+                      <span class="block font-sans text-[8px] uppercase tracking-widest text-linenCard/80">Volume I</span>
+                      <h3 class="font-display text-2xl sm:text-3xl leading-tight font-bold text-twitchYellow mt-0.5">
+                        The First<br><span class="italic font-normal text-linenCard">Tremor</span>
+                      </h3>
+                    </div>
+                    <span class="pl-2 font-sans text-[8px] uppercase tracking-widest text-linenCard/85">General Mamba</span>
+                  </div>
+                </button>
+              </div>
+
+              <!-- Spacer for Center Spine -->
+              <div class="hidden md:block md:col-span-2"></div>
+
+              <!-- Right Side: Soft Rounded Narrative Card -->
+              <div class="md:col-span-5">
+                <div class="bg-ultramarine/85 backdrop-blur-xs rounded-[28px] p-7 sm:p-8 shadow-xl">
+                  <div class="flex flex-wrap items-center gap-2.5 mb-3">
+                    <span class="bg-twitchYellow text-ultramarineDeep font-sans text-[10px] uppercase tracking-widest font-bold px-3.5 py-1 rounded-full">
+                      Out Now &bull; Volume I
+                    </span>
+                    <span class="font-sans text-xs text-linenCard/70">2024 Release</span>
+                  </div>
+
+                  <h3 class="font-display text-3xl sm:text-4xl font-semibold text-linenCard">
+                    The First Tremor
+                  </h3>
+
+                  <p class="font-serif text-base leading-relaxed text-linenCard/85 mt-3">
+                    When a November substation collapse plunges three coastal wards into darkness, sound archivist Darius Cole discovers that aging copper lines are replaying human voices from twenty years earlier.
+                  </p>
+
+                  <div class="mt-6 flex flex-wrap items-center gap-3">
+                    <button onclick="openBuyModal('twitch1')" class="bg-twitchYellow hover:bg-linenCard text-ultramarineDeep font-sans font-semibold text-xs px-5 py-2.5 rounded-full transition-colors">
+                      Order Volume I
+                    </button>
+                    <button onclick="openExcerptModal('twitch1')" class="bg-twitchBlue/25 hover:bg-twitchBlue/40 text-twitchYellow font-sans font-semibold text-xs px-5 py-2.5 rounded-full transition-colors">
+                      Read Excerpt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ========== TIMELINE STAGE II: VOLUME II (OUT NOW / CONTINUING ARC) ========== -->
+            <div class="relative pl-16 md:pl-0 md:grid md:grid-cols-12 md:gap-10 items-center">
+              
+              <!-- Glowing Timeline Node II -->
+              <div class="absolute left-1.5 md:left-1/2 top-6 md:top-1/2 w-10 h-10 rounded-full bg-ultramarineDeep border-2 border-twitchBlue text-twitchBlue font-display font-bold text-lg flex items-center justify-center md:-translate-x-1/2 md:-translate-y-1/2 shadow-[0_0_20px_rgba(0,136,255,0.75)] z-10">
+                II
+              </div>
+
+              <!-- Left Side (Desktop): Soft Rounded Narrative Card (Alternating Layout) -->
+              <div class="md:col-span-5 order-2 md:order-1">
+                <div class="bg-ultramarine/85 backdrop-blur-xs rounded-[28px] p-7 sm:p-8 shadow-xl">
+                  <div class="flex flex-wrap items-center gap-2.5 mb-3">
+                    <span class="bg-twitchBlue text-linenCard font-sans text-[10px] uppercase tracking-widest font-bold px-3.5 py-1 rounded-full">
+                      Out Now &bull; Book II
+                    </span>
+                    <span class="font-sans text-xs text-twitchYellow font-medium">National Bestseller</span>
+                  </div>
+
+                  <h3 class="font-display text-3xl sm:text-4xl font-semibold text-linenCard">
+                    High Voltage
+                  </h3>
+
+                  <p class="font-serif text-base leading-relaxed text-linenCard/85 mt-3">
+                    Pursued from Charleston to Baltimore, the underground sound-keepers of the Copper Choir race to decode a second surge before GridCorp permanently erases the Atlantic corridor.
+                  </p>
+
+                  <!-- Collapsible Lore & Characters Drawer -->
+                  <div id="lore-drawer-ii" class="hidden mt-4 p-4 rounded-[20px] bg-ultramarineDeep/90 text-xs font-serif text-linenCard/90 space-y-2">
+                    <p><strong class="text-twitchYellow font-sans uppercase tracking-wider text-[10px]">The Copper Choir:</strong> Church audio engineers and pirate radio operators preserving unedited neighborhood oral histories.</p>
+                    <p><strong class="text-twitchBlue font-sans uppercase tracking-wider text-[10px]">Key Characters:</strong> Darius Cole, Miriam Mamba-Bell, and former lineman Deacon Ezra.</p>
+                  </div>
+
+                  <div class="mt-6 flex flex-wrap items-center gap-3">
+                    <button onclick="openBuyModal('twitch2')" class="bg-twitchYellow hover:bg-linenCard text-ultramarineDeep font-sans font-semibold text-xs px-5 py-2.5 rounded-full transition-colors">
+                      Order Volume II
+                    </button>
+                    <button onclick="toggleArcLore()" id="arc-lore-btn" class="bg-linenCard/12 hover:bg-linenCard/22 text-linenCard font-sans font-semibold text-xs px-5 py-2.5 rounded-full transition-colors">
+                      Explore Arc &amp; Lore +
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Spacer for Center Spine -->
+              <div class="hidden md:block md:col-span-2 md:order-2"></div>
+
+              <!-- Right Side (Desktop): Floating Hardcover Book II -->
+              <div class="md:col-span-5 order-1 md:order-3 flex justify-start mb-6 md:mb-0">
+                <button onclick="openBuyModal('twitch2')" class="group focus:outline-none">
+                  <div class="book-specimen-3d aspect-[2/3] w-44 sm:w-48 rounded-[16px] bg-gradient-to-br from-twitchYellow via-goldLight to-twitchBlue p-5 flex flex-col justify-between text-left group-hover:-translate-y-2 transition-transform">
+                    <div class="pl-2">
+                      <span class="block font-sans text-[7.5px] uppercase tracking-widest text-ultramarineDeep font-bold">The Twitch Universe</span>
+                      <div class="w-6 h-[1.5px] bg-ultramarineDeep mt-1.5 rounded-full"></div>
+                    </div>
+                    <div class="pl-2 my-auto">
+                      <span class="block font-sans text-[8px] uppercase tracking-widest text-ultramarineDeep/85 font-semibold">Volume II</span>
+                      <h3 class="font-display text-2xl sm:text-3xl leading-tight font-bold text-ultramarineDeep mt-0.5">
+                        High<br><span class="italic font-semibold text-linenCard">Voltage</span>
+                      </h3>
+                    </div>
+                    <span class="pl-2 font-sans text-[8px] uppercase tracking-widest text-linenCard font-bold">General Mamba</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- ========== TIMELINE STAGE III: VOLUME III (COMING SOON FINALE) ========== -->
+            <div class="relative pl-16 md:pl-0 md:grid md:grid-cols-12 md:gap-10 items-center">
+              
+              <!-- Glowing Timeline Node III -->
+              <div class="absolute left-1.5 md:left-1/2 top-6 md:top-1/2 w-10 h-10 rounded-full bg-ultramarineDeep border-2 border-twitchYellow text-twitchYellow font-display font-bold text-lg flex items-center justify-center md:-translate-x-1/2 md:-translate-y-1/2 shadow-[0_0_20px_rgba(255,214,0,0.65)] z-10">
+                III
+              </div>
+
+              <!-- Left Side (Desktop): Floating Hardcover Book III -->
+              <div class="md:col-span-5 flex justify-start md:justify-end mb-6 md:mb-0">
+                <button onclick="openBuyModal('twitch3')" class="group focus:outline-none">
+                  <div class="book-specimen-3d aspect-[2/3] w-44 sm:w-48 rounded-[16px] bg-gradient-to-b from-ultramarineDeep via-twitchBlue to-twitchYellow p-5 flex flex-col justify-between text-left group-hover:-translate-y-2 transition-transform">
+                    <div class="pl-2">
+                      <span class="block font-sans text-[7.5px] uppercase tracking-widest text-twitchYellow font-bold">The Twitch Universe</span>
+                      <div class="w-6 h-[1.5px] bg-twitchYellow mt-1.5 rounded-full"></div>
+                    </div>
+                    <div class="pl-2 my-auto">
+                      <span class="block font-sans text-[8px] uppercase tracking-widest text-twitchYellow font-semibold">Volume III</span>
+                      <h3 class="font-display text-2xl sm:text-3xl leading-tight font-bold text-linenCard mt-0.5">
+                        Still<br><span class="italic font-normal text-twitchYellow">Waters</span>
+                      </h3>
+                    </div>
+                    <span class="pl-2 font-sans text-[8px] uppercase tracking-widest text-ultramarineDeep font-bold">General Mamba</span>
+                  </div>
+                </button>
+              </div>
+
+              <!-- Spacer for Center Spine -->
+              <div class="hidden md:block md:col-span-2"></div>
+
+              <!-- Right Side: Soft Rounded Narrative Card -->
+              <div class="md:col-span-5">
+                <div class="bg-ultramarine/85 backdrop-blur-xs rounded-[28px] p-7 sm:p-8 shadow-xl">
+                  <div class="flex flex-wrap items-center gap-2.5 mb-3">
+                    <span class="bg-plum text-twitchYellow font-sans text-[10px] uppercase tracking-widest font-bold px-3.5 py-1 rounded-full">
+                      Coming Soon &bull; Trilogy Finale
+                    </span>
+                    <span class="font-sans text-xs text-linenCard/75">Fall 2026</span>
+                  </div>
+
+                  <h3 class="font-display text-3xl sm:text-4xl font-semibold text-linenCard">
+                    Still Waters
+                  </h3>
+
+                  <p class="font-serif text-base leading-relaxed text-linenCard/85 mt-3">
+                    In the sweeping conclusion to <span class="italic">The Twitch Universe</span>, every buried frequency converges on a single midnight reckoning over who owns the city’s past—and who gets to write its future.
+                  </p>
+
+                  <div class="mt-6 flex flex-wrap items-center gap-3">
+                    <button onclick="openBuyModal('twitch3')" class="bg-twitchYellow hover:bg-linenCard text-ultramarineDeep font-sans font-semibold text-xs px-5 py-2.5 rounded-full transition-colors">
+                      Pre-Order &amp; Notify
+                    </button>
+                    <button onclick="openExcerptModal('twitch3')" class="bg-linenCard/12 hover:bg-linenCard/22 text-linenCard font-sans font-semibold text-xs px-5 py-2.5 rounded-full transition-colors">
+                      Preview Prologue
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. BOLD 'BROADCASTS & COMMUNITY' HUB (YOUTUBE & SOCIALS) ==================== -->
+    <section id="broadcasts" class="py-22 sm:py-28 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="font-sans text-[11px] uppercase tracking-[0.22em] text-plum font-semibold">
+              YouTube Official Channel &amp; Reader Community
+            </span>
+            <h2 class="font-display text-4xl sm:text-6xl font-semibold text-ultramarine mt-1.5">
+              Watch, Listen &amp; <span class="italic font-normal text-plum">Follow the Work</span>
+            </h2>
+          </div>
+          <p class="font-serif text-base sm:text-lg text-inkMuted max-w-md">
+            Long-form video essays on writing and faith, behind-the-scenes studio conversations, and weekly dispatches across every platform.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Left (7 cols): Soft-Rounded YouTube Channel Showcase Card -->
+          <div class="lg:col-span-7 organic-card bg-ultramarine text-linenCard p-7 sm:p-9 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div class="flex items-center gap-3">
+                  <span class="w-10 h-7 rounded-xl bg-[#CC181E] text-white flex items-center justify-center text-xs font-bold shadow-xs">&#9654;</span>
+                  <div>
+                    <span class="block font-display text-xl font-bold text-linenCard leading-none">@GeneralMambaWrites</span>
+                    <span class="block font-sans text-[11px] text-goldLight mt-1">56.2K Subscribers &bull; Essays, Talks &amp; Worldbuilding</span>
+                  </div>
+                </div>
+                <span class="bg-plum text-goldLight font-sans text-[10px] uppercase tracking-widest font-semibold px-3.5 py-1.5 rounded-full">
+                  New Video Thursdays
+                </span>
+              </div>
+
+              <!-- Playable Episode Preview Thumbnail -->
+              <button onclick="openTrailerModal()" class="group relative w-full aspect-video rounded-[24px] overflow-hidden bg-ultramarineDeep text-left focus:outline-none shadow-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80"
+                  alt="Writing Against Silence YouTube Video Essay"
+                  onerror="this.src='https://placehold.co/800x450/0C1E4A/F7F4EE?text=Writing+Against+Silence'"
+                  class="w-full h-full object-cover opacity-65 group-hover:scale-105 transition-transform duration-700"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-ultramarineDeep via-ultramarine/35 to-transparent"></div>
+
+                <span class="absolute top-4 right-4 bg-ultramarineDeep/90 text-goldLight font-sans text-[11px] font-semibold px-3 py-1 rounded-full">
+                  16:42
+                </span>
+
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 rounded-full bg-gold group-hover:bg-goldLight text-ultramarineDeep flex items-center justify-center shadow-xl transition-transform group-hover:scale-105">
+                    <span class="text-xl ml-1">&#9654;</span>
+                  </div>
+                </div>
+
+                <div class="absolute bottom-5 left-5 right-5">
+                  <span class="font-sans text-[10px] uppercase tracking-widest text-goldLight font-semibold">Featured Studio Essay</span>
+                  <p class="font-display text-2xl sm:text-3xl font-semibold text-linenCard leading-snug mt-0.5">
+                    Writing Against Silence: Faith, Fiction &amp; Building Worlds
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-linenCard/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <span class="font-serif italic text-base text-linenCard/80">Subscribe for weekly craft talks and live reader Q&amp;As.</span>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" onclick="showToast('Opening @GeneralMambaWrites on YouTube...')" class="shrink-0 bg-gold hover:bg-goldLight text-ultramarineDeep font-sans font-semibold text-xs px-6 py-3 rounded-full transition-colors inline-flex items-center justify-center gap-2">
+                <span>Subscribe on YouTube</span>
+                <span class="text-[#CC181E]">&#9654;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right (5 cols): Four Soft Rounded Social Follow Cards -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+            
+            <!-- Instagram -->
+            <div class="organic-card bg-linenCard p-6 flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2 font-sans text-[10.5px] uppercase tracking-widest font-semibold text-plum">
+                  <span>Instagram</span>
+                  <span class="text-gold">&bull;</span>
+                  <span class="text-ultramarine lowercase font-semibold text-xs tracking-normal">@generalmamba.ink</span>
+                </div>
+                <p class="font-serif text-sm sm:text-base text-inkMuted mt-1">
+                  Annotated manuscript pages, bookshop tour photography, and desk notes.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'Instagram (@generalmamba.ink)')" class="shrink-0 bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+                Follow
+              </button>
+            </div>
+
+            <!-- X / Threads -->
+            <div class="organic-card bg-linenCard p-6 flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2 font-sans text-[10.5px] uppercase tracking-widest font-semibold text-ultramarine">
+                  <span>X &amp; Threads</span>
+                  <span class="text-gold">&bull;</span>
+                  <span class="text-ultramarine lowercase font-semibold text-xs tracking-normal">@generalmamba</span>
+                </div>
+                <p class="font-serif text-sm sm:text-base text-inkMuted mt-1">
+                  Essays-in-miniature, cultural reflections, and live reader dialogue.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'X / Threads (@generalmamba)')" class="shrink-0 bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+                Follow
+              </button>
+            </div>
+
+            <!-- TikTok -->
+            <div class="organic-card bg-linenCard p-6 flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2 font-sans text-[10.5px] uppercase tracking-widest font-semibold text-plum">
+                  <span>TikTok</span>
+                  <span class="text-gold">&bull;</span>
+                  <span class="text-ultramarine lowercase font-semibold text-xs tracking-normal">@generalmambareads</span>
+                </div>
+                <p class="font-serif text-sm sm:text-base text-inkMuted mt-1">
+                  Spoken-word book excerpts, independent bookstore stops, and story notes.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'TikTok (@generalmambareads)')" class="shrink-0 bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+                Follow
+              </button>
+            </div>
+
+            <!-- Substack Dispatches -->
+            <div class="organic-card bg-linenCard p-6 flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2 font-sans text-[10.5px] uppercase tracking-widest font-semibold text-gold">
+                  <span>Substack</span>
+                  <span>&bull;</span>
+                  <span class="text-ultramarine font-semibold text-xs tracking-normal capitalize">Letters by General Mamba</span>
+                </div>
+                <p class="font-serif text-sm sm:text-base text-inkMuted mt-1">
+                  Long-form monthly essays, reading guides, and early chapter proofs.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'Substack Dispatches')" class="shrink-0 bg-linenSoft hover:bg-ultramarine hover:text-linenCard text-ultramarine font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+                Follow
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 5. REDESIGNED AIRY LITERARY EDITORIAL FOOTER ==================== -->
+  <footer id="editorial-footer" class="pb-0 pt-6">
+    <div class="w-full bg-ultramarineDeep text-linenCard px-7 sm:px-14 py-14 sm:py-18 relative overflow-hidden">
+      <!-- Subtle warm gold ambient glow -->
+      <div aria-hidden="true" class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-plum/35 blur-3xl pointer-events-none"></div>
+      <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-gold/15 blur-3xl pointer-events-none"></div>
+
+      <!-- Top Row: Quiet Monthly Letters Dispatch + Poetic Sign-Off Quote -->
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-linenCard/12 relative z-10 items-center">
+        
+        <!-- Left (7 cols): Letters, Once a Month -->
+        <div class="lg:col-span-7">
+          <span class="inline-flex items-center gap-2 font-sans text-[10.5px] uppercase tracking-[0.24em] text-goldLight font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-goldLight"></span>
+            <span>Monthly Literary Dispatch</span>
+          </span>
+          <h2 class="font-display text-3xl sm:text-5xl font-semibold text-linenCard mt-2 leading-tight">
+            Letters, <span class="italic font-normal text-goldLight">Once a Month</span>
+          </h2>
+          <p class="font-serif text-base sm:text-lg text-linenCard/80 mt-3 max-w-xl leading-relaxed">
+            Unpublished essays, early chapter proofs from <span class="italic">Still Waters</span> and <span class="italic">Sunday Sermons &amp; Salt</span>, and quiet notes from the writing desk.
+          </p>
+
+          <form onsubmit="handleNewsletterSubmit(event)" class="mt-6 max-w-md">
+            <label for="letters-email" class="sr-only">Email address</label>
+            <div class="bg-ultramarine rounded-full p-1.5 pl-5 flex items-center border border-linenCard/15 focus-within:border-goldLight transition-colors">
+              <input
+                id="letters-email"
+                type="email"
+                required
+                placeholder="Your email address"
+                class="w-full bg-transparent font-serif text-base text-linenCard placeholder-linenCard/50 focus:outline-none pr-3"
+              />
+              <button type="submit" class="bg-gold hover:bg-goldLight text-ultramarineDeep font-sans font-semibold text-xs px-6 py-3 rounded-full transition-colors shrink-0">
+                Subscribe
+              </button>
+            </div>
+            <p id="letters-feedback" class="hidden mt-3 font-serif italic text-base text-goldLight"></p>
+          </form>
+        </div>
+
+        <!-- Right (5 cols): Poetic Sign-Off Quote & Reading Inquiries -->
+        <div class="lg:col-span-5 lg:pl-6">
+          <blockquote class="font-display italic text-2xl sm:text-3xl text-linenCard/95 leading-snug">
+            “We write not to escape the weight of the world, but to learn how to carry it with grace.”
+          </blockquote>
+          <p class="font-sans text-[11px] uppercase tracking-[0.22em] text-goldLight mt-4 font-semibold">
+            — General Mamba, Brooklyn &amp; Charleston
+          </p>
+          <div class="mt-6 pt-5 border-t border-linenCard/10 flex flex-wrap gap-x-6 gap-y-2 font-sans text-xs text-linenCard/70">
+            <span>Literary &amp; Speaking: <a href="mailto:press@generalmamba.com" class="text-goldLight hover:underline">press@generalmamba.com</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Clean Wordmark, Navigation & Minimal Copyright -->
+      <div class="max-w-6xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+        <a href="#top" class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-full bg-gold text-ultramarineDeep font-display font-bold text-lg flex items-center justify-center">GM</span>
+          <span class="font-display text-2xl font-semibold text-linenCard">General Mamba</span>
+        </a>
+
+        <nav aria-label="Footer Navigation" class="flex flex-wrap justify-center gap-8 font-sans text-sm text-linenCard/75">
+          <a href="#top" class="hover:text-goldLight transition-colors">Beginning</a>
+          <a href="#bibliography" class="hover:text-goldLight transition-colors">Collected Works</a>
+          <a href="#twitch-timeline" class="hover:text-twitchYellow transition-colors">The Twitch Universe</a>
+          <a href="#broadcasts" class="hover:text-goldLight transition-colors">YouTube &amp; Community</a>
+        </nav>
+
+        <span class="font-sans text-[11px] text-linenCard/55">
+          &copy; 2026 General Mamba. All rights reserved.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS (ORGANIC 30PX ROUNDED CARDS) ==================== -->
+
+  <!-- 1. Excerpt Reader Modal -->
+  <div id="excerpt-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-ultramarineDeep/75 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-linenCard max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-[32px] shadow-2xl p-8 sm:p-11 relative text-inkNavy">
+      <button onclick="closeModal('excerpt-modal')" aria-label="Close excerpt" class="absolute top-6 right-7 w-9 h-9 rounded-full bg-linenSoft hover:bg-ultramarine hover:text-linenCard flex items-center justify-center text-lg transition-colors">&times;</button>
+      <p id="excerpt-kicker" class="font-sans text-[10.5px] uppercase tracking-[0.22em] text-plum font-semibold mb-2"></p>
+      <h3 id="excerpt-title" class="font-display text-3xl sm:text-4xl font-semibold text-ultramarine mb-6"></h3>
+      <div id="excerpt-body" class="space-y-4 font-serif text-lg sm:text-xl leading-relaxed text-inkNavy/90"></div>
+      <div class="mt-8 pt-6 border-t border-ultramarine/12 flex items-center justify-between">
+        <span class="font-sans text-xs text-inkMuted">Chapter One &bull; Archival Proof</span>
+        <button id="excerpt-order-btn" onclick="closeModal('excerpt-modal'); openBuyModal('grace')" class="bg-ultramarine hover:bg-plum text-linenCard font-sans text-xs font-semibold px-6 py-3 rounded-full transition-colors">
+          Acquire Edition &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Author Film / YouTube Trailer Modal -->
+  <div id="trailer-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-ultramarineDeep/80 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-ultramarine max-w-2xl w-full rounded-[32px] shadow-2xl p-7 sm:p-9 relative text-linenCard">
+      <button onclick="closeModal('trailer-modal')" aria-label="Close film" class="absolute top-6 right-7 w-9 h-9 rounded-full bg-linenCard/10 hover:bg-gold hover:text-ultramarineDeep flex items-center justify-center text-lg transition-colors">&times;</button>
+      <p class="font-sans text-[10.5px] uppercase tracking-[0.22em] text-goldLight font-semibold mb-1">YouTube Studio Broadcast &bull; @GeneralMambaWrites</p>
+      <h3 class="font-display text-2xl sm:text-3xl font-semibold text-linenCard mb-5">Writing Against Silence: Official Studio Film</h3>
+      <div class="aspect-video w-full rounded-[22px] bg-ultramarineDeep flex flex-col items-center justify-center p-6 text-center">
+        <div class="w-14 h-14 rounded-full bg-gold text-ultramarineDeep flex items-center justify-center text-lg font-bold mb-3">&#9654;</div>
+        <p class="font-display italic text-2xl text-linenCard max-w-md">“Every book begins with a truth that refuses to remain quiet...”</p>
+        <p class="font-sans text-xs text-goldLight mt-2">Runtime 02:40 &bull; Brooklyn Studio</p>
+      </div>
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+        <span class="font-serif italic text-sm text-linenCard/80">Subscribe on YouTube for weekly essays and Twitch Universe lore.</span>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="bg-gold hover:bg-goldLight text-ultramarineDeep font-sans text-xs font-semibold px-6 py-3 rounded-full transition-colors">
+          Open YouTube Channel &nearr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Bookseller Acquisition Modal -->
+  <div id="buy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-ultramarineDeep/75 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-linenCard max-w-lg w-full rounded-[32px] shadow-2xl p-8 sm:p-10 relative text-inkNavy">
+      <button onclick="closeModal('buy-modal')" aria-label="Close modal" class="absolute top-6 right-7 w-9 h-9 rounded-full bg-linenSoft hover:bg-ultramarine hover:text-linenCard flex items-center justify-center text-lg transition-colors">&times;</button>
+      <p id="buy-kicker" class="font-sans text-[10.5px] uppercase tracking-[0.22em] text-plum font-semibold mb-1"></p>
+      <h3 id="buy-title" class="font-display text-3xl sm:text-4xl font-semibold text-ultramarine mb-3"></h3>
+      <p id="buy-desc" class="font-serif text-base leading-relaxed text-inkMuted mb-6"></p>
+      <p class="font-sans text-[10.5px] uppercase tracking-[0.2em] text-ultramarine font-semibold mb-3">Choose a Bookseller</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-sans text-xs font-semibold">
+        <button onclick="showToast('Opening Bookshop.org...'); closeModal('buy-modal')" class="rounded-full bg-linenSoft hover:bg-ultramarine hover:text-linenCard py-3 px-4 flex justify-between items-center transition-colors">
+          <span>Bookshop.org</span><span>&nearr;</span>
+        </button>
+        <button onclick="showToast('Opening Barnes & Noble...'); closeModal('buy-modal')" class="rounded-full bg-linenSoft hover:bg-ultramarine hover:text-linenCard py-3 px-4 flex justify-between items-center transition-colors">
+          <span>Barnes &amp; Noble</span><span>&nearr;</span>
+        </button>
+        <button onclick="showToast('Opening Amazon Books...'); closeModal('buy-modal')" class="rounded-full bg-linenSoft hover:bg-ultramarine hover:text-linenCard py-3 px-4 flex justify-between items-center transition-colors">
+          <span>Amazon Books</span><span>&nearr;</span>
+        </button>
+        <button onclick="showToast('Opening Libro.fm Audio...'); closeModal('buy-modal')" class="rounded-full bg-linenSoft hover:bg-ultramarine hover:text-linenCard py-3 px-4 flex justify-between items-center transition-colors">
+          <span>Libro.fm Audio</span><span>&nearr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Tour RSVP Modal -->
+  <div id="rsvp-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-ultramarineDeep/75 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-linenCard max-w-md w-full rounded-[32px] shadow-2xl p-8 relative text-inkNavy">
+      <button onclick="closeModal('rsvp-modal')" aria-label="Close RSVP" class="absolute top-6 right-7 w-9 h-9 rounded-full bg-linenSoft hover:bg-ultramarine hover:text-linenCard flex items-center justify-center text-lg transition-colors">&times;</button>
+      <p class="font-sans text-[10.5px] uppercase tracking-[0.22em] text-plum font-semibold mb-1">Reading &amp; Conversation</p>
+      <h3 id="rsvp-title" class="font-display text-2xl sm:text-3xl font-semibold text-ultramarine"></h3>
+      <p id="rsvp-venue" class="font-serif italic text-base text-inkMuted mt-0.5 mb-5"></p>
+      <form onsubmit="submitRsvp(event)" class="space-y-4">
+        <div>
+          <label class="block font-sans text-xs font-semibold text-ultramarine mb-1.5">Full Name</label>
+          <input type="text" required placeholder="James Baldwin" class="w-full rounded-full bg-linenSoft px-4 py-2.5 font-serif text-base focus:outline-none" />
+        </div>
+        <div>
+          <label class="block font-sans text-xs font-semibold text-ultramarine mb-1.5">Email Address</label>
+          <input type="email" required placeholder="reader@domain.com" class="w-full rounded-full bg-linenSoft px-4 py-2.5 font-serif text-base focus:outline-none" />
+        </div>
+        <button type="submit" class="w-full bg-ultramarine hover:bg-plum text-linenCard font-sans text-xs font-semibold py-3.5 rounded-full transition-colors">
+          Confirm Seat &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Soft Pill Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-ultramarineDeep text-linenCard font-sans text-xs font-medium px-5 py-3 rounded-full shadow-2xl"></div>
+
+  <script>
+    const booksCatalog = {
+      grace: {
+        indexLabel: "01 / 06",
+        kicker: "001 • Hardcover Memoir • 2024",
+        badge: "NYT Bestseller",
+        coverTitle: "The Weight<br><span class='italic font-normal text-goldLight'>&amp;</span> The Grace",
+        coverClass: "bg-ultramarine text-linenCard",
+        title: "The Weight & The Grace",
+        desc: "A deeply moving memoir examining fatherhood, Southern pulpit heritage, and the quiet grace required to set heavy burdens down.",
+        excerpt: [
+          "My father kept his Sunday shoes in a cedar box beneath the floorboards of the hall closet, wrapped in torn sheets of the Charleston News and Courier.",
+          "“A man is judged first by what holds him up,” he told me once, not looking up from his rag. He did not mean leather or Goodyear welts. He meant posture.",
+          "It took me thirty years to understand that silence is its own kind of weight—and that setting it down is the beginning of grace."
+        ]
+      },
+      nextchapter: {
+        indexLabel: "02 / 06",
+        kicker: "002 • Collected Essays • 2025",
+        badge: "Cultural Vision",
+        coverTitle: "The Next<br><span class='italic font-normal text-goldLight'>Chapter</span>",
+        coverClass: "bg-plum text-linenCard",
+        title: "The Next Chapter",
+        desc: "Twelve luminous essays on reinvention, civic courage, and building enduring institutions in uncertain times.",
+        excerpt: [
+          "Every city keeps two ledgers: the one printed in zoning maps, and the one sung on front porches after dusk.",
+          "When you listen closely to the second ledger, you discover that renewal rarely starts in marble halls—it begins where ordinary neighbors decide to build what has not yet been imagined."
+        ]
+      },
+      bornbold: {
+        indexLabel: "03 / 06",
+        kicker: "003 • Collected Prose • 2023",
+        badge: "Whiting Honoree",
+        coverTitle: "Born<br><span class='italic font-normal text-goldLight'>Bold</span>",
+        coverClass: "bg-gradient-to-br from-ultramarine via-plum to-gold text-linenCard",
+        title: "Born Bold",
+        desc: "Portraits of artists, teachers, and quiet visionaries who refused to shrink to fit the room.",
+        excerpt: [
+          "Courage rarely arrives with brass bands. More often it looks like staying seated at the table after everyone else has rehearsed their apologies.",
+          "To be born bold is not the absence of hesitation—it is the decision that your silence costs more than your truth."
+        ]
+      },
+      unseenbridge: {
+        indexLabel: "04 / 06",
+        kicker: "004 • Narrative History • 2021",
+        badge: "Archive & Memory",
+        coverTitle: "The Unseen<br><span class='italic font-normal text-goldLight'>Bridge</span>",
+        coverClass: "bg-ultramarineDeep text-linenCard",
+        title: "The Unseen Bridge",
+        desc: "Tracing the hidden generational links between coastal South Carolina and the Great Migration North.",
+        excerpt: [
+          "Before a bridge is ever poured in steel, someone has to imagine standing on the far bank.",
+          "This book is a tribute to the builders whose names never made the plaque."
+        ]
+      },
+      youngsinner: {
+        indexLabel: "05 / 06",
+        kicker: "005 • Epistolary Prose • 2022",
+        badge: "Collected Letters",
+        coverTitle: "Letters to a<br><span class='italic font-normal text-goldLight'>Young Sinner</span>",
+        coverClass: "bg-gradient-to-br from-plumSoft via-ultramarine to-ultramarineDeep text-linenCard",
+        title: "Letters to a Young Sinner",
+        desc: "Twenty-four candid letters addressed to a young writer wrestling with inherited doctrine, creative ambition, and the discipline of mercy.",
+        excerpt: [
+          "You write to me as though doubt were a trespass upon the threshold of faith, when in truth it is the very hinge upon which honest prayer turns.",
+          "Do not polish your questions until they lose their edge; a writer’s first duty is fidelity to what actually trembles in the dark."
+        ]
+      },
+      sermonssalt: {
+        indexLabel: "06 / 06",
+        kicker: "006 • Forthcoming • Spring 2027",
+        badge: "New Volume",
+        coverTitle: "Sunday Sermons<br><span class='italic font-normal text-goldLight'>&amp; Salt</span>",
+        coverClass: "bg-gradient-to-b from-gold via-plum to-ultramarineDeep text-linenCard",
+        title: "Sunday Sermons & Salt",
+        desc: "A lyrical study of coastal sanctuaries, Sunday dinner tables, and the cadence of Southern oratory—exploring how food, sea air, and spoken rhythm preserve memory.",
+        excerpt: [
+          "By noon on Sundays, the marsh wind carried two distinct benedictions down Meeting Street: the low swell of the organ and the unmistakable perfume of smoked mullet and butter beans.",
+          "Everything my grandmother knew about eternity she first practiced at a pine table."
+        ]
+      },
+      twitch1: {
+        kicker: "The Twitch Universe Vol. I • Out Now",
+        badge: "Volume I",
+        coverTitle: "The First<br><span class='italic font-normal text-twitchYellow'>Tremor</span>",
+        coverClass: "bg-gradient-to-br from-twitchBlue via-ultramarine to-ultramarineDeep text-linenCard",
+        title: "The First Tremor (Twitch I)",
+        desc: "When a November substation collapse plunges three coastal wards into darkness, archivist Darius Cole discovers copper lines replaying voices from twenty years earlier.",
+        excerpt: [
+          "The substation on Fourth Street hummed at sixty cycles per second until the night it didn’t, and in the sudden silence that followed, the copper wires began to speak.",
+          "Darius Cole sat with both hands pressed flat against his mixing console, listening to a voice recorded in 1998 drift cleanly through dead speakers."
+        ]
+      },
+      twitch2: {
+        kicker: "The Twitch Universe Vol. II • Out Now",
+        badge: "Volume II",
+        coverTitle: "High<br><span class='italic font-semibold text-linenCard'>Voltage</span>",
+        coverClass: "bg-gradient-to-br from-twitchYellow via-goldLight to-twitchBlue text-ultramarineDeep",
+        title: "High Voltage (Twitch II)",
+        desc: "Pursued from Charleston to Baltimore, the underground sound-keepers of the Copper Choir race to decode a second surge before GridCorp locks the corridor.",
+        excerpt: [
+          "By February, every church basement between Savannah and Wilmington had at least one reel-to-reel deck tuned to the low-frequency band.",
+          "“They think memory is an archive,” Miriam told the room. “They haven’t realized it’s a circuit.”"
+        ]
+      },
+      twitch3: {
+        kicker: "The Twitch Universe Vol. III • Fall 2026",
+        badge: "Trilogy Finale",
+        coverTitle: "Still<br><span class='italic font-normal text-twitchYellow'>Waters</span>",
+        coverClass: "bg-gradient-to-b from-ultramarineDeep via-twitchBlue to-twitchYellow text-linenCard",
+        title: "Still Waters (Twitch III)",
+        desc: "In the sweeping conclusion to The Twitch Universe trilogy, every buried frequency converges on a single midnight reckoning.",
+        excerpt: [
+          "At low tide, the pilings beneath the old Cooper River bridge carried the faintest vibration, like a cello string plucked three counties away.",
+          "Some truths were meant to be kept in vaults; others were meant to flood the street."
+        ]
+      }
+    };
+
+    const bibOrder = ['grace', 'nextchapter', 'bornbold', 'unseenbridge', 'youngsinner', 'sermonssalt'];
+    let activeBibKey = 'grace';
+
+    function activateScrollBook(key) {
+      if (!booksCatalog[key] || activeBibKey === key) return;
+      activeBibKey = key;
+      const book = booksCatalog[key];
+
+      bibOrder.forEach(k => {
+        const card = document.getElementById(`chapter-${k}`);
+        const dot = document.getElementById(`dot-${k}`);
+        if (card) {
+          if (k === key) card.classList.add('is-active');
+          else card.classList.remove('is-active');
+        }
+        if (dot) {
+          if (k === key) {
+            dot.className = 'w-5 h-2.5 rounded-full bg-ultramarine transition-all';
+          } else {
+            dot.className = 'w-2 h-2 rounded-full bg-ultramarine/25 hover:bg-plum transition-all';
+          }
+        }
+      });
+
+      document.getElementById('pedestal-kicker').textContent = book.kicker;
+      document.getElementById('pedestal-counter').textContent = book.indexLabel;
+      document.getElementById('pedestal-badge').textContent = book.badge;
+      document.getElementById('pedestal-cover-title').innerHTML = book.coverTitle;
+      document.getElementById('pedestal-title').textContent = book.title;
+
+      const cover = document.getElementById('pedestal-cover');
+      cover.className = `book-specimen-3d aspect-[2/3] w-48 sm:w-52 rounded-[16px] p-6 flex flex-col justify-between ${book.coverClass}`;
+      cover.style.transform = 'rotateY(-6deg) rotateX(2deg) scale(1.02)';
+      setTimeout(() => {
+        if (activeBibKey === key) {
+          cover.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+        }
+      }, 320);
+
+      document.getElementById('pedestal-buy-btn').setAttribute('onclick', `openBuyModal('${key}')`);
+      document.getElementById('pedestal-excerpt-btn').setAttribute('onclick', `openExcerptModal('${key}')`);
+    }
+
+    function scrollToChapter(key) {
+      const target = document.getElementById(`chapter-${key}`);
+      if (target) {
+        activateScrollBook(key);
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Natural Scroll-Driven Scrollytelling Observer
+    function initScrollBibliography() {
+      const chapters = document.querySelectorAll('[data-book-key]');
+      if (!chapters.length) return;
+
+      const updateActiveChapterOnScroll = () => {
+        const viewportFocus = window.innerHeight * 0.42;
+        let closestKey = activeBibKey;
+        let minDistance = Infinity;
+
+        chapters.forEach(chapter => {
+          const rect = chapter.getBoundingClientRect();
+          const chapterCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(chapterCenter - viewportFocus);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestKey = chapter.getAttribute('data-book-key');
+          }
+        });
+
+        if (closestKey) {
+          activateScrollBook(closestKey);
+        }
+      };
+
+      window.addEventListener('scroll', updateActiveChapterOnScroll, { passive: true });
+      updateActiveChapterOnScroll();
+    }
+
+    window.addEventListener('DOMContentLoaded', initScrollBibliography);
+
+    function tiltPedestalBook(e) {
+      const stage = document.getElementById('pedestal-stage');
+      const cover = document.getElementById('pedestal-cover');
+      const rect = stage.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      cover.style.transform = `rotateY(${(x * 26).toFixed(1)}deg) rotateX(${(-y * 20).toFixed(1)}deg) scale(1.03)`;
+    }
+
+    function resetPedestalBook() {
+      document.getElementById('pedestal-cover').style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+    }
+
+    function toggleArcLore() {
+      const drawer = document.getElementById('lore-drawer-ii');
+      const btn = document.getElementById('arc-lore-btn');
+      const isHidden = drawer.classList.contains('hidden');
+      if (isHidden) {
+        drawer.classList.remove('hidden');
+        btn.textContent = 'Hide Arc & Lore −';
+      } else {
+        drawer.classList.add('hidden');
+        btn.textContent = 'Explore Arc & Lore +';
+      }
+    }
+
+    function toggleFollow(btn, label) {
+      const active = btn.dataset.following === 'true';
+      if (!active) {
+        btn.dataset.following = 'true';
+        btn.textContent = 'Following ✓';
+        btn.classList.remove('bg-linenSoft', 'text-ultramarine');
+        btn.classList.add('bg-ultramarine', 'text-linenCard');
+        showToast(`Now following ${label}`);
+      } else {
+        btn.dataset.following = 'false';
+        btn.textContent = 'Follow';
+        btn.classList.add('bg-linenSoft', 'text-ultramarine');
+        btn.classList.remove('bg-ultramarine', 'text-linenCard');
+      }
+    }
+
+    function toggleMobileNav() {
+      const menu = document.getElementById('mobile-nav');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+    }
+
+    function openExcerptModal(key) {
+      const book = booksCatalog[key] || booksCatalog.grace;
+      document.getElementById('excerpt-kicker').textContent = book.kicker;
+      document.getElementById('excerpt-title').textContent = book.title;
+      const body = document.getElementById('excerpt-body');
+      body.innerHTML = book.excerpt.map((p, i) => {
+        if (i === 0) {
+          return `<p><span class="float-left font-display text-5xl leading-[0.8] pr-3 pt-1 text-plum">${p.charAt(0)}</span>${p.slice(1)}</p>`;
+        }
+        return `<p>${p}</p>`;
+      }).join('');
+      document.getElementById('excerpt-order-btn').setAttribute('onclick', `closeModal('excerpt-modal'); openBuyModal('${key}')`);
+      openModal('excerpt-modal');
+    }
+
+    function openTrailerModal() {
+      openModal('trailer-modal');
+    }
+
+    function openBuyModal(key) {
+      const book = booksCatalog[key] || booksCatalog.grace;
+      document.getElementById('buy-kicker').textContent = book.kicker;
+      document.getElementById('buy-title').textContent = book.title;
+      document.getElementById('buy-desc').textContent = book.desc;
+      openModal('buy-modal');
+    }
+
+    function openRsvpModal(title, venue) {
+      document.getElementById('rsvp-title').textContent = title;
+      document.getElementById('rsvp-venue').textContent = venue;
+      openModal('rsvp-modal');
+    }
+
+    function openModal(id) {
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+
+    window.addEventListener('click', (e) => {
+      ['excerpt-modal', 'trailer-modal', 'buy-modal', 'rsvp-modal'].forEach(id => {
+        if (e.target === document.getElementById(id)) closeModal(id);
+      });
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        ['excerpt-modal', 'trailer-modal', 'buy-modal', 'rsvp-modal'].forEach(closeModal);
+      }
+    });
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('letters-email');
+      const feedback = document.getElementById('letters-feedback');
+      feedback.textContent = `Thank you. ${input.value} has been added to General Mamba’s monthly letters.`;
+      feedback.classList.remove('hidden');
+      input.value = '';
+    }
+
+    function submitRsvp(e) {
+      e.preventDefault();
+      closeModal('rsvp-modal');
+      showToast('Your seat has been reserved. Confirmation sent to your inbox.');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => toast.classList.add('hidden'), 3200);
+    }
+  </script>
+</body>
+</html>

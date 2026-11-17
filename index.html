@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Mamba — Website Design Review</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#1a1a2e',
+            muted: '#6b7280',
+            cream: '#FAF8F4',
+            creamDark: '#F0EDE6',
+            accent: '#2E1859',
+            accentLight: '#6C4BA0',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #FAF8F4; font-family: 'Inter', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen text-ink">
+
+  <!-- Header -->
+  <header class="pt-12 sm:pt-16 pb-10 px-6 text-center">
+    <p class="text-[11px] uppercase tracking-[0.25em] text-accentLight font-semibold mb-3">Client Review</p>
+    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink">General Mamba</h1>
+    <p class="font-display text-lg sm:text-xl italic text-muted mt-2">Author Website — Design Prototypes</p>
+    <div class="w-16 h-[2px] bg-accent mx-auto mt-6"></div>
+    <p class="text-sm text-muted mt-6 max-w-xl mx-auto leading-relaxed">
+      Below are the design directions for your review. Each card describes the concept and key features. Click <strong>"View Design"</strong> to open the full prototype in a new tab.
+    </p>
+  </header>
+
+  <!-- Designs Grid -->
+  <main class="max-w-5xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Design 1 -->
+    <section class="bg-white rounded-2xl shadow-sm border border-creamDark overflow-hidden">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-accentLight font-semibold">Design 1</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mt-1">Split-Screen Portrait</h2>
+          </div>
+          <a href="design-1.html" target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentLight text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0">
+            View Design <span>&rarr;</span>
+          </a>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-2xl">
+          A bold split-screen layout with the author portrait on one side and content on the other. Forest green, terracotta, and ochre palette. Strong editorial presence with a warm, grounded feel.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Split-screen hero</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Forest & terracotta palette</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Prominent portrait</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Minimalist nav</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 1 Variant -->
+    <section class="bg-white rounded-2xl shadow-sm border border-creamDark overflow-hidden">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-accentLight font-semibold">Design 1 — Variant</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mt-1">Split-Screen (Ultramarine & Gold)</h2>
+          </div>
+          <a href="design-1-variant.html" target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentLight text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0">
+            View Design <span>&rarr;</span>
+          </a>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-2xl">
+          Same split-screen structure as Design 1 but with an ultramarine, plum, and gold colour palette. A richer, more regal feel while keeping the same bold layout.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Split-screen hero</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Ultramarine & gold palette</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Prominent portrait</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 1B Variant -->
+    <section class="bg-white rounded-2xl shadow-sm border border-creamDark overflow-hidden">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-accentLight font-semibold">Design 1B — Variant</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mt-1">Atmospheric Fade Hero (Forest)</h2>
+          </div>
+          <a href="design-1B-variant.html" target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentLight text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0">
+            View Design <span>&rarr;</span>
+          </a>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-2xl">
+          Replaces the split-screen hero with an atmospheric fade portrait effect — the author portrait blends cinematically into the background. Forest green and terracotta palette. Dramatic, moody entrance.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Atmospheric fade hero</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Forest & terracotta palette</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Cinematic mood</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 1C Variant -->
+    <section class="bg-white rounded-2xl shadow-sm border border-creamDark overflow-hidden">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-accentLight font-semibold">Design 1C — Variant</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mt-1">Atmospheric Fade Hero (Ultramarine)</h2>
+          </div>
+          <a href="design-1C-variant.html" target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentLight text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0">
+            View Design <span>&rarr;</span>
+          </a>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-2xl">
+          Same atmospheric fade hero treatment as 1B but with the ultramarine and gold palette. The portrait dissolves into deep blue tones for a refined, cinematic presence.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Atmospheric fade hero</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Ultramarine & gold palette</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Cinematic mood</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 -->
+    <section class="bg-white rounded-2xl shadow-sm border border-creamDark overflow-hidden">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-accentLight font-semibold">Design 2</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mt-1">Editorial Centred Layout</h2>
+          </div>
+          <a href="design-2.html" target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentLight text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0">
+            View Design <span>&rarr;</span>
+          </a>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-2xl">
+          A clean, centred editorial layout with a navy and plum colour scheme. Magazine-inspired typography, SVG retailer logos, and a strong generational voice in the hero headline.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Centred editorial layout</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Navy & plum palette</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">SVG retailer logos</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Magazine typography</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 3 -->
+    <section class="bg-white rounded-2xl shadow-sm border border-creamDark overflow-hidden">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-accentLight font-semibold">Design 3</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mt-1">Organic Literary Vertical Timeline</h2>
+          </div>
+          <a href="design-3.html" target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentLight text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0">
+            View Design <span>&rarr;</span>
+          </a>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-2xl">
+          An organic, scroll-driven layout built around a vertical timeline. Warm linen textures, ultramarine accents, and gold highlights. The Twitch Universe books are presented chronologically with an immersive reading flow. Full-width editorial footer.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Vertical timeline</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Linen & ultramarine palette</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Scroll-driven narrative</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Full-width footer</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 4 -->
+    <section class="bg-white rounded-2xl shadow-sm border border-creamDark overflow-hidden">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-accentLight font-semibold">Design 4</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-semibold mt-1">Royal Cobalt Imperial Masthead</h2>
+          </div>
+          <a href="design-4.html" target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentLight text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0">
+            View Design <span>&rarr;</span>
+          </a>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-2xl">
+          A monumental masthead design on royal cobalt with burnished gold accents. Features a painted artwork plate for The Twitch Universe, a horizontal book shelf with realistic hardcover jackets, and a rotating author seal. Imperial and commanding.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Monumental masthead</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Royal cobalt & gold palette</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Painted artwork plate</span>
+          <span class="text-[11px] bg-creamDark text-muted px-3 py-1 rounded-full">Book shelf display</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center pb-12 px-6">
+    <div class="w-10 h-[1px] bg-creamDark mx-auto mb-4"></div>
+    <p class="text-xs text-muted">Prepared by Optimal Operational Interface (O.O.I) &bull; November 2026</p>
+  </footer>
+
+</body>
+</html>
