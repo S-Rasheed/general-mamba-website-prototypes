@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Mamba — The Twitch Universe &amp; Selected Works (Ultramarine V2)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- High-Contrast Literary Fonts: Playfair Display, Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* True Ultramarine Pigment, Deep Indigo & Warm Gold Palette — Zero Pure Black */
+            cobaltRoyal: '#1D2F8F',
+            cobaltMidnight: '#152470',
+            cobaltDeep: '#0F1B55',
+            electricAzure: '#4E8EFF',
+            electricRoyal: '#3366E0',
+            electricGold: '#FFCC1A',
+            burnishedGold: '#D4960A',
+            burnishedGoldDark: '#B07A08',
+            plumImperial: '#2D1B6E',
+            plumVelvet: '#1E1252',
+            alabaster: '#FAF8F2',
+            alabasterLight: '#FDFCF9',
+            alabasterWarm: '#F0EDE4',
+            inkCobalt: '#172580',
+            inkSlate: '#4A5080',
+          },
+          fontFamily: {
+            masthead: ['"Playfair Display"', 'Georgia', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: {
+            micro: '0.2em',
+            wordmark: '0.28em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8F2;
+      color: #172580;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fine woven linen & archival paper textures */
+    .cobalt-linen {
+      background-color: #1D2F8F;
+      background-image:
+        radial-gradient(circle at 50% 18%, rgba(78, 142, 255, 0.22) 0%, transparent 62%),
+        radial-gradient(circle at 85% 10%, rgba(212, 150, 10, 0.14) 0%, transparent 45%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0px, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 3px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 3px);
+    }
+
+    .alabaster-paper {
+      background-color: #FAF8F2;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(253, 252, 249, 0.9) 0%, rgba(240, 237, 228, 0.45) 100%),
+        radial-gradient(rgba(23, 37, 128, 0.032) 1px, transparent 0);
+      background-size: 100% 100%, 24px 24px;
+    }
+
+    .twitch-midnight-grid {
+      background-color: #152470;
+      background-image:
+        radial-gradient(circle at 20% 25%, rgba(78, 142, 255, 0.24) 0%, transparent 55%),
+        radial-gradient(circle at 82% 75%, rgba(255, 204, 26, 0.14) 0%, transparent 50%),
+        linear-gradient(to right, rgba(78, 142, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(78, 142, 255, 0.07) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+    }
+
+    /* Monumental Masthead Overlapping Effect */
+    .masthead-display {
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: -0.028em;
+      line-height: 0.86;
+      text-shadow: 0 10px 30px rgba(15, 27, 85, 0.45);
+    }
+
+    /* Painterly Twilight Indigo & Plum Artwork Plate */
+    .painted-universe-plate {
+      background:
+        radial-gradient(ellipse at 22% 32%, rgba(78, 142, 255, 0.55) 0%, transparent 54%),
+        radial-gradient(ellipse at 78% 28%, rgba(255, 204, 26, 0.36) 0%, transparent 48%),
+        radial-gradient(ellipse at 64% 78%, rgba(45, 27, 110, 0.85) 0%, transparent 60%),
+        linear-gradient(128deg, #0F1B55 0%, #2444B0 46%, #1E1252 100%);
+    }
+
+    /* Realistic Hardcover Book Jackets with Cloth Texture & Spine Crease */
+    .book-jacket {
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow:
+        -6px 12px 24px rgba(29, 47, 143, 0.28),
+        -2px 4px 8px rgba(30, 18, 82, 0.18),
+        inset 1px 0 1px rgba(255, 255, 255, 0.32);
+    }
+
+    .book-jacket::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 13px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(15, 27, 85, 0.26) 40%,
+        rgba(255, 255, 255, 0.15) 56%,
+        rgba(15, 27, 85, 0.05) 100%
+      );
+      pointer-events: none;
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+
+    .book-jacket::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    .shelf-item:hover .book-jacket {
+      transform: translateY(-8px);
+      box-shadow:
+        -10px 20px 34px rgba(29, 47, 143, 0.36),
+        0 0 0 2px #D9A028,
+        inset 1px 0 1px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Rotating Circular Author Seal */
+    @keyframes slowSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .seal-ring {
+      animation: slowSpin 32s linear infinite;
+    }
+
+    /* Hide scrollbar for horizontal book shelf */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .hairline-gold {
+      border-color: rgba(217, 160, 40, 0.34);
+    }
+  </style>
+</head>
+<body class="alabaster-paper selection:bg-electricGold selection:text-cobaltDeep">
+
+  <!-- ==================== HERO: OVERLAPPING EDITORIAL MASTHEAD ON ROYAL COBALT ==================== -->
+  <div class="relative">
+    <!-- Upper Royal Cobalt Canvas (Covers top 70% of hero so artwork plate bridges smoothly into Alabaster) -->
+    <div class="cobalt-linen text-alabasterLight pt-6 sm:pt-8 pb-44 sm:pb-56 px-5 sm:px-10 border-b border-burnishedGold/40">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Top Header with Custom GM Crest, Generous Vertical Spacing & Divider -->
+        <header class="flex flex-col items-center">
+          <div class="w-full flex items-center justify-between">
+            <!-- Custom GM Monogram Crest -->
+            <a href="#top" aria-label="General Mamba Home" class="group inline-flex items-center gap-2.5 text-burnishedGold hover:text-electricGold transition-colors">
+              <svg class="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="40" height="40" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="5.5" y="5.5" width="33" height="33" rx="1" stroke="currentColor" stroke-width="0.6" stroke-dasharray="2 2"/>
+                <text x="22" y="27" text-anchor="middle" fill="currentColor" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="16" letter-spacing="1">GM</text>
+              </svg>
+              <span class="hidden md:inline text-[10px] uppercase tracking-micro text-alabasterLight/75 group-hover:text-electricGold transition-colors">Est. Brooklyn</span>
+            </a>
+
+            <!-- Center Brand Wordmark -->
+            <a href="#top" class="font-serif text-lg sm:text-xl font-semibold tracking-wordmark text-alabasterLight uppercase hover:text-electricGold transition-colors">
+              General Mamba
+            </a>
+
+            <!-- Right Quick Broadcast Anchor -->
+            <a href="#broadcasts" class="inline-flex items-center gap-2 text-[10px] uppercase tracking-micro text-electricGold hover:text-alabasterLight font-semibold transition-colors">
+              <span class="w-2 h-2 rounded-full bg-electricAzure animate-pulse"></span>
+              <span class="hidden sm:inline">@GeneralMambaWrites</span>
+              <span class="sm:hidden">YouTube</span>
+            </a>
+          </div>
+
+          <!-- Generous Vertical Breathing Room & Clean Golden Divider Line -->
+          <div class="w-28 h-[1px] bg-burnishedGold/55 my-4 sm:my-5"></div>
+
+          <!-- Navigation Links -->
+          <nav aria-label="Primary Navigation" class="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-10 gap-y-2 text-[10.5px] sm:text-[11.5px] font-medium uppercase tracking-micro text-alabasterLight/85">
+            <a href="#twitch-showcase" class="text-electricGold font-semibold hover:text-alabasterLight transition-colors">The Twitch Universe</a>
+            <a href="#books-shelf" class="hover:text-electricGold transition-colors">Books</a>
+            <a href="#broadcasts" class="hover:text-electricGold transition-colors">YouTube</a>
+            <a href="#events" class="hover:text-electricGold transition-colors">Events</a>
+            <a href="#editorial-hub" class="hover:text-electricGold transition-colors">Bio</a>
+          </nav>
+        </header>
+
+        <!-- Monumental Editorial Masthead -->
+        <div class="text-center mt-10 sm:mt-14 relative z-20">
+          <p class="font-serif italic text-base sm:text-xl text-burnishedGold tracking-wide mb-2 sm:mb-3">
+            Essayist &bull; Novelist &bull; Creator of The Twitch Universe
+          </p>
+          <h1 class="masthead-display text-[56px] sm:text-[96px] md:text-[124px] lg:text-[142px] font-bold text-alabasterLight select-none">
+            General Mamba
+          </h1>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Overlapping Painted Artwork Plate ("THE TWITCH UNIVERSE") Bridging Cobalt into Alabaster -->
+    <div class="max-w-5xl mx-auto px-5 sm:px-10 -mt-36 sm:-mt-48 relative z-30">
+      <div class="painted-universe-plate rounded-[3px] border-2 border-burnishedGold/80 shadow-[0_24px_60px_rgba(29,47,143,0.35)] overflow-hidden relative">
+        
+        <!-- Subtle Electric Blue Inner Architectural Frame -->
+        <div class="m-2.5 sm:m-4 border border-electricAzure/45 rounded-[2px] p-6 sm:p-12 md:p-14 relative overflow-hidden">
+          
+          <!-- Abstract Painted Grid & Acoustic Wave Art SVG -->
+          <svg aria-hidden="true" class="pointer-events-none absolute right-0 top-0 h-full w-2/3 opacity-35 mix-blend-screen" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M80 340C170 210 230 90 340 120C440 148 420 290 540 220" stroke="#4E8EFF" stroke-width="2.5"/>
+            <path d="M40 300C160 150 260 60 390 110C490 148 470 310 580 250" stroke="#FFD026" stroke-width="1.6" stroke-dasharray="6 6"/>
+            <circle cx="430" cy="185" r="115" stroke="#4E8EFF" stroke-width="1.2"/>
+            <circle cx="430" cy="185" r="78" stroke="#FFD026" stroke-width="1"/>
+            <path d="M290 40L490 360M340 20L540 340" stroke="#4E8EFF" stroke-width="0.75" opacity="0.6"/>
+          </svg>
+
+          <div class="relative z-10 max-w-xl">
+            <div class="inline-flex items-center gap-2 bg-cobaltDeep/75 border border-electricAzure/60 px-3 py-1 rounded-[2px] mb-4">
+              <span class="w-1.5 h-1.5 rounded-full bg-electricGold"></span>
+              <span class="text-[9.5px] uppercase tracking-micro font-semibold text-electricGold">
+                The Latest &bull; A Three-Part Saga
+              </span>
+            </div>
+
+            <h2 class="font-masthead text-3xl sm:text-5xl md:text-[52px] leading-[1.08] text-alabasterLight font-semibold">
+              The Twitch Universe: <span class="italic font-normal text-electricGold">Book III (Still Waters)</span> &amp; Complete Trilogy
+            </h2>
+
+            <p class="mt-4 text-xs sm:text-sm md:text-[15px] leading-relaxed text-alabasterLight/85 max-w-lg">
+              Three volumes. One fractured Eastern Seaboard power grid where copper lines hold human memory—and every spark carries a moral reckoning.
+            </p>
+
+            <div class="mt-7 flex flex-wrap items-center gap-4">
+              <a href="#twitch-showcase" class="bg-electricGold hover:bg-burnishedGold text-cobaltDeep font-bold text-[10.5px] uppercase tracking-micro px-6 py-3.5 rounded-[2px] transition-colors shadow-md">
+                Explore the Trilogy &rarr;
+              </a>
+              <button onclick="openExcerptModal('twitch1')" class="bg-cobaltDeep/70 hover:bg-cobaltDeep text-alabasterLight border border-electricAzure/70 hover:border-electricGold text-[10.5px] uppercase tracking-micro font-semibold px-5 py-3.5 rounded-[2px] transition-colors">
+                Read Chapter One
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== CANDID EDITORIAL INTRO & INTERACTIVE 'SELECT:' CATEGORY SWITCHER ==================== -->
+    <section id="editorial-hub" class="pt-16 sm:pt-24 pb-20 sm:pb-28 px-5 sm:px-10 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto">
+
+        <!-- Candid Editorial Author Statement -->
+        <div class="max-w-2xl mx-auto text-center sm:text-left mb-14 sm:mb-16">
+          <p class="font-serif text-2xl sm:text-[28px] leading-[1.42] text-inkCobalt font-normal">
+            I am General Mamba. I write books about memory, faith, and what men are told not to say. Some of them are quiet reckonings; three of them form <span class="italic text-plumImperial font-semibold">The Twitch Universe</span>.
+          </p>
+        </div>
+
+        <!-- Interactive 'SELECT:' Category Switcher (Inspired by Reference Layout) -->
+        <div class="flex flex-wrap items-baseline justify-center sm:justify-start gap-x-7 sm:gap-x-10 gap-y-3 pb-10 mb-12 border-b hairline-gold">
+          <span class="text-[10px] uppercase tracking-micro text-inkSlate font-semibold mr-2">Select</span>
+          
+          <button onclick="switchEditorialTab('twitch')" id="sel-tab-twitch" class="font-masthead text-2xl sm:text-4xl font-bold text-inkCobalt border-b-2 border-burnishedGold pb-1 transition-all">
+            The Twitch Universe
+          </button>
+          <button onclick="switchEditorialTab('books')" id="sel-tab-books" class="font-masthead text-2xl sm:text-4xl font-medium text-inkSlate/60 hover:text-plumImperial pb-1 transition-all">
+            Novels &amp; Essays
+          </button>
+          <button onclick="switchEditorialTab('youtube')" id="sel-tab-youtube" class="font-masthead text-2xl sm:text-4xl font-medium text-inkSlate/60 hover:text-plumImperial pb-1 transition-all">
+            YouTube Channel
+          </button>
+          <button onclick="switchEditorialTab('bio')" id="sel-tab-bio" class="font-masthead text-2xl sm:text-4xl font-medium text-inkSlate/60 hover:text-plumImperial pb-1 transition-all">
+            Author Bio
+          </button>
+        </div>
+
+        <!-- Asymmetric 2-Column Editorial Spotlight -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center relative">
+          
+          <!-- Delicate Celestial & Botanical Line-Art Accent (Subtle Gold & Plum) -->
+          <svg aria-hidden="true" class="pointer-events-none hidden lg:block absolute -right-12 -bottom-16 w-72 h-72 text-burnishedGold/25" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="130" cy="130" r="105" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="130" cy="130" r="72" stroke="#2D1B6E" stroke-width="0.8" opacity="0.5"/>
+            <path d="M130 15V245M15 130H245" stroke="currentColor" stroke-width="0.8"/>
+            <path d="M55 55L205 205M205 55L55 205" stroke="#2D1B6E" stroke-width="0.6" opacity="0.4"/>
+          </svg>
+
+          <!-- Left Column (5 cols): Royal Cobalt & Gold Duotone Portrait + Rotating Circular Seal -->
+          <div class="lg:col-span-5 relative max-w-sm mx-auto lg:max-w-none w-full">
+            <div class="relative bg-cobaltRoyal/10 p-2.5 border border-burnishedGold/60 rounded-[2px] shadow-lg">
+              <div class="relative overflow-hidden aspect-[4/5] bg-cobaltRoyal rounded-[1px]">
+                <img
+                  src="https://images.pexels.com/photos/9322950/pexels-photo-9322950.jpeg?auto=compress&cs=tinysrgb&w=950&h=1100&dpr=1"
+                  alt="Portrait of General Mamba"
+                  onerror="this.src='https://placehold.co/600x750/0F2766/FAF7F0?text=General+Mamba'"
+                  class="w-full h-full object-cover sepia-[.16] contrast-[1.08] brightness-95 mix-blend-luminosity opacity-90"
+                />
+                <div class="absolute inset-0 bg-gradient-to-tr from-plumVelvet/40 via-transparent to-burnishedGold/20 pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Overlapping Circular Author Seal (Inspired by Reference Badge) -->
+            <div class="absolute -bottom-6 -left-4 sm:-left-6 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-cobaltRoyal text-alabasterLight border-2 border-burnishedGold shadow-xl flex items-center justify-center p-1.5">
+              <svg class="w-full h-full seal-ring" viewBox="0 0 100 100">
+                <defs>
+                  <path id="sealCircle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                </defs>
+                <text fill="#FFD026" font-size="8.2" font-weight="600" letter-spacing="2.1">
+                  <textPath href="#sealCircle">CRITICALLY ACCLAIMED &bull; AUTHOR &bull;</textPath>
+                </text>
+              </svg>
+              <span class="absolute font-masthead font-bold text-xl text-alabasterLight">GM</span>
+            </div>
+          </div>
+
+          <!-- Right Column (7 cols): Dynamic Editorial Panel -->
+          <div class="lg:col-span-7 relative z-10">
+            
+            <!-- PANEL A: THE TWITCH UNIVERSE (Default Active) -->
+            <div id="ed-panel-twitch">
+              <p class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2">
+                Featured Trilogy &bull; Electric Blue &amp; Gold Edition
+              </p>
+              <h3 class="font-masthead text-3xl sm:text-5xl leading-[1.1] text-inkCobalt font-semibold">
+                The Twitch Universe Trilogy
+              </h3>
+              <p class="mt-3 text-sm sm:text-base font-semibold text-plumImperial">
+                Three interconnected novels. One city learning what happens when buried memories surge back onto the grid.
+              </p>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-inkSlate">
+                Beginning with <span class="italic text-inkCobalt font-medium">The First Tremor</span>, continuing through <span class="italic text-inkCobalt font-medium">High Voltage</span>, and culminating in <span class="italic text-inkCobalt font-medium">Still Waters</span>, General Mamba blends speculative suspense with intimate portraits of Black family, sound archives, and survival.
+              </p>
+
+              <!-- Interactive Volume Selector Pills -->
+              <div class="mt-6 flex flex-wrap gap-2">
+                <button onclick="setMiniVolume('twitch1')" id="mini-pill-twitch1" class="bg-cobaltRoyal text-electricGold font-semibold text-[10px] uppercase tracking-micro px-3.5 py-2 rounded-[2px] transition-colors">
+                  Vol. I: The First Tremor
+                </button>
+                <button onclick="setMiniVolume('twitch2')" id="mini-pill-twitch2" class="bg-alabasterWarm hover:bg-cobaltRoyal/10 text-inkCobalt font-medium text-[10px] uppercase tracking-micro px-3.5 py-2 rounded-[2px] transition-colors">
+                  Vol. II: High Voltage
+                </button>
+                <button onclick="setMiniVolume('twitch3')" id="mini-pill-twitch3" class="bg-alabasterWarm hover:bg-cobaltRoyal/10 text-inkCobalt font-medium text-[10px] uppercase tracking-micro px-3.5 py-2 rounded-[2px] transition-colors">
+                  Vol. III: Still Waters
+                </button>
+              </div>
+
+              <div id="mini-volume-note" class="mt-4 p-4 bg-alabasterLight border-l-2 border-electricAzure text-xs sm:text-sm text-inkSlate leading-relaxed">
+                <strong class="text-inkCobalt">Book I — The First Tremor (2024):</strong> When a November substation collapse plunges three coastal wards into darkness, archivist Darius Cole hears his late brother’s voice broadcasting through unpowered copper lines.
+              </div>
+
+              <div class="mt-6 flex flex-wrap items-center gap-4">
+                <button id="mini-order-btn" onclick="openBookModal('twitch1')" class="bg-burnishedGold hover:bg-electricGold text-cobaltDeep font-bold text-[10.5px] uppercase tracking-micro px-6 py-3.5 rounded-[2px] transition-colors shadow-xs">
+                  Order Volume I &rarr;
+                </button>
+                <button id="mini-excerpt-btn" onclick="openExcerptModal('twitch1')" class="text-[10.5px] uppercase tracking-micro font-semibold text-inkCobalt hover:text-plumImperial border-b border-burnishedGold pb-1 transition-colors">
+                  Read Chapter Excerpt
+                </button>
+              </div>
+            </div>
+
+            <!-- PANEL B: NOVELS & ESSAYS -->
+            <div id="ed-panel-books" class="hidden">
+              <p class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2">
+                Nonfiction &amp; Poetry &bull; Standalone Works
+              </p>
+              <h3 class="font-masthead text-3xl sm:text-5xl leading-[1.1] text-inkCobalt font-semibold">
+                The Weight of Grace &amp; Selected Essays
+              </h3>
+              <p class="mt-3 text-sm sm:text-base font-semibold text-plumImperial">
+                National Bestselling Memoir &bull; Whiting Award Winner
+              </p>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-inkSlate">
+                Raised between a storefront pulpit in coastal South Carolina and the quiet expectations of Black manhood, General Mamba’s nonfiction (<span class="italic">The Weight of Grace</span>, <span class="italic">Salt &amp; Iron</span>) examines inheritance, fatherhood, and the unglamorous work of setting heavy burdens down.
+              </p>
+              <div class="mt-7 flex flex-wrap items-center gap-4">
+                <button onclick="openBookModal('grace')" class="bg-plumImperial hover:bg-plumVelvet text-alabasterLight font-semibold text-[10.5px] uppercase tracking-micro px-6 py-3.5 rounded-[2px] transition-colors">
+                  Explore The Weight of Grace &rarr;
+                </button>
+                <button onclick="openExcerptModal('grace')" class="text-[10.5px] uppercase tracking-micro font-semibold text-inkCobalt hover:text-plumImperial border-b border-burnishedGold pb-1 transition-colors">
+                  Read Memoir Excerpt
+                </button>
+              </div>
+            </div>
+
+            <!-- PANEL C: YOUTUBE CHANNEL -->
+            <div id="ed-panel-youtube" class="hidden">
+              <p class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2">
+                Weekly Video Essays &bull; @GeneralMambaWrites
+              </p>
+              <h3 class="font-masthead text-3xl sm:text-5xl leading-[1.1] text-inkCobalt font-semibold">
+                Inside the Studio &amp; Twitch Lore Breakdowns
+              </h3>
+              <p class="mt-3 text-sm sm:text-base font-semibold text-plumImperial">
+                48.2K Subscribers &bull; New Episodes Every Thursday
+              </p>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-inkSlate">
+                Every week on YouTube, General Mamba opens his annotated notebooks—unpacked chapter-by-chapter clues from <span class="italic">The Twitch Universe</span>, essays on Southern history, and candid conversations on the craft of revision.
+              </p>
+              <div class="mt-7 flex flex-wrap items-center gap-4">
+                <button onclick="openVideoModal()" class="bg-cobaltRoyal hover:bg-cobaltMidnight text-electricGold font-bold text-[10.5px] uppercase tracking-micro px-6 py-3.5 rounded-[2px] transition-colors">
+                  Watch Featured Episode &#9654;
+                </button>
+                <a href="#broadcasts" class="text-[10.5px] uppercase tracking-micro font-semibold text-inkCobalt hover:text-plumImperial border-b border-burnishedGold pb-1 transition-colors">
+                  All Social Channels &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- PANEL D: AUTHOR BIO -->
+            <div id="ed-panel-bio" class="hidden">
+              <p class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2">
+                Biography &bull; Brooklyn &amp; South Carolina
+              </p>
+              <h3 class="font-masthead text-3xl sm:text-5xl leading-[1.1] text-inkCobalt font-semibold">
+                He writes what men are told not to say.
+              </h3>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-inkSlate">
+                General Mamba is the creator of <span class="font-medium text-inkCobalt">The Twitch Universe</span> trilogy and author of <span class="italic">The Weight of Grace</span>. His essays have appeared in <span class="italic">The Atlantic</span>, <span class="italic">Harper’s Magazine</span>, and <span class="italic">The Paris Review</span>.
+              </p>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-inkSlate">
+                A former high school literature teacher and recipient of a Whiting Award in Nonfiction, he divides his time between Brooklyn and the South Carolina Lowcountry.
+              </p>
+              <div class="mt-7 flex flex-wrap items-center gap-5">
+                <a href="#events" class="bg-burnishedGold hover:bg-electricGold text-cobaltDeep font-bold text-[10.5px] uppercase tracking-micro px-6 py-3.5 rounded-[2px] transition-colors">
+                  2026 Tour Dates &rarr;
+                </a>
+                <a href="#newsletter" class="text-[10.5px] uppercase tracking-micro font-semibold text-inkCobalt hover:text-plumImperial border-b border-burnishedGold pb-1 transition-colors">
+                  Monthly Letters
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DEDICATED 'THE TWITCH UNIVERSE' SHOWCASE (ELECTRIC BLUE & GOLD) ==================== -->
+    <section id="twitch-showcase" class="twitch-midnight-grid text-alabasterLight py-20 sm:py-28 px-5 sm:px-10 border-y-2 border-burnishedGold/70">
+      <div class="max-w-5xl mx-auto">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b border-electricAzure/30">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 bg-electricAzure/20 border border-electricGold/60 px-3 py-1 rounded-[2px] mb-4">
+              <span class="text-electricGold text-xs">&#9889;</span>
+              <span class="text-[10px] uppercase tracking-micro font-semibold text-electricGold">
+                The Twitch Universe &bull; Complete Three-Book Arc
+              </span>
+            </div>
+            <h2 class="font-masthead text-3xl sm:text-5xl leading-[1.1] text-alabasterLight font-semibold">
+              Three volumes. One <span class="italic font-normal text-electricGold">high-voltage</span> reckoning.
+            </h2>
+          </div>
+
+          <!-- Universe Tabs -->
+          <div class="flex flex-wrap gap-2" role="tablist">
+            <button onclick="switchTwitchSectionTab('trilogy')" id="tw-tab-trilogy" class="bg-electricGold text-cobaltDeep font-bold text-[10px] uppercase tracking-micro px-4 py-2.5 rounded-[2px] transition-all">
+              01. The Trilogy
+            </button>
+            <button onclick="switchTwitchSectionTab('lore')" id="tw-tab-lore" class="bg-cobaltDeep/80 text-alabasterLight border border-electricAzure/50 hover:border-electricGold font-medium text-[10px] uppercase tracking-micro px-4 py-2.5 rounded-[2px] transition-all">
+              02. World &amp; Lore
+            </button>
+            <button onclick="switchTwitchSectionTab('order')" id="tw-tab-order" class="bg-cobaltDeep/80 text-alabasterLight border border-electricAzure/50 hover:border-electricGold font-medium text-[10px] uppercase tracking-micro px-4 py-2.5 rounded-[2px] transition-all">
+              03. Reading Order
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: 3-VOLUME CONDUIT TRIPTYCH -->
+        <div id="tw-panel-trilogy" class="pt-12">
+          <!-- Connected I - II - III Timeline Conduit -->
+          <div class="hidden md:grid grid-cols-3 items-center mb-8 px-12 relative">
+            <div class="absolute inset-x-24 top-1/2 h-[2px] bg-gradient-to-r from-electricAzure via-electricGold to-electricAzure -translate-y-1/2"></div>
+            <div class="relative z-10 flex justify-center">
+              <span class="bg-cobaltDeep border-2 border-electricGold text-electricGold font-masthead font-bold text-sm w-9 h-9 rounded-full flex items-center justify-center">I</span>
+            </div>
+            <div class="relative z-10 flex justify-center">
+              <span class="bg-cobaltDeep border-2 border-electricAzure text-electricAzure font-masthead font-bold text-sm w-9 h-9 rounded-full flex items-center justify-center">II</span>
+            </div>
+            <div class="relative z-10 flex justify-center">
+              <span class="bg-cobaltDeep border-2 border-electricGold text-electricGold font-masthead font-bold text-sm w-9 h-9 rounded-full flex items-center justify-center">III</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Volume I -->
+            <article class="shelf-item bg-cobaltDeep/85 border border-electricAzure/45 rounded-[3px] p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[10px] uppercase tracking-micro text-electricGold font-semibold mb-4">
+                  <span>Book I &bull; Available</span>
+                  <span>2024</span>
+                </div>
+                <button onclick="openBookModal('twitch1')" class="w-full text-left focus:outline-none">
+                  <div class="book-jacket aspect-[2/3] w-44 mx-auto bg-gradient-to-br from-electricRoyal via-cobaltRoyal to-cobaltDeep rounded-[2px] p-5 flex flex-col justify-between border border-electricGold/50">
+                    <div class="pl-2">
+                      <span class="block text-[7.5px] uppercase tracking-micro text-electricGold font-semibold">The Twitch Universe</span>
+                      <div class="w-6 h-[1.5px] bg-electricGold mt-1.5"></div>
+                    </div>
+                    <div class="pl-2 my-auto">
+                      <span class="block text-[9px] uppercase tracking-widest text-electricAzure font-semibold mb-1">Volume I</span>
+                      <h3 class="font-masthead text-2xl leading-tight font-bold text-electricGold">
+                        The First<br><span class="italic font-normal text-alabasterLight">Tremor</span>
+                      </h3>
+                    </div>
+                    <div class="pl-2">
+                      <span class="text-[8px] uppercase tracking-micro text-alabasterLight/85">General Mamba</span>
+                    </div>
+                  </div>
+                </button>
+                <h4 class="font-masthead text-2xl text-alabasterLight font-semibold mt-6">The First Tremor</h4>
+                <p class="mt-2 text-xs leading-relaxed text-alabasterLight/80">
+                  A November substation collapse turns coastal copper lines into acoustic archives—replaying voices twenty years gone.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-electricAzure/30 flex items-center justify-between">
+                <button onclick="openBookModal('twitch1')" class="text-[10px] uppercase tracking-micro font-semibold text-electricGold hover:text-alabasterLight transition-colors">
+                  Acquire Book I &rarr;
+                </button>
+                <button onclick="openExcerptModal('twitch1')" class="text-[10px] uppercase tracking-micro text-electricAzure hover:underline">
+                  Excerpt
+                </button>
+              </div>
+            </article>
+
+            <!-- Volume II -->
+            <article class="shelf-item bg-cobaltDeep/85 border border-electricGold/55 rounded-[3px] p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[10px] uppercase tracking-micro text-electricAzure font-semibold mb-4">
+                  <span>Book II &bull; Bestseller</span>
+                  <span>2025</span>
+                </div>
+                <button onclick="openBookModal('twitch2')" class="w-full text-left focus:outline-none">
+                  <div class="book-jacket aspect-[2/3] w-44 mx-auto bg-gradient-to-br from-electricGold via-burnishedGold to-cobaltRoyal rounded-[2px] p-5 flex flex-col justify-between border border-electricAzure/60">
+                    <div class="pl-2">
+                      <span class="block text-[7.5px] uppercase tracking-micro text-cobaltDeep font-bold">The Twitch Universe</span>
+                      <div class="w-6 h-[1.5px] bg-cobaltDeep mt-1.5"></div>
+                    </div>
+                    <div class="pl-2 my-auto">
+                      <span class="block text-[9px] uppercase tracking-widest text-cobaltDeep font-bold mb-1">Volume II</span>
+                      <h3 class="font-masthead text-2xl leading-tight font-bold text-cobaltDeep">
+                        High<br><span class="italic font-semibold text-alabasterLight">Voltage</span>
+                      </h3>
+                    </div>
+                    <div class="pl-2">
+                      <span class="text-[8px] uppercase tracking-micro text-alabasterLight font-semibold">General Mamba</span>
+                    </div>
+                  </div>
+                </button>
+                <h4 class="font-masthead text-2xl text-alabasterLight font-semibold mt-6">High Voltage</h4>
+                <p class="mt-2 text-xs leading-relaxed text-alabasterLight/80">
+                  Pursued from Charleston to Baltimore, the Copper Choir races to decode a second surge before GridCorp locks the grid.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-electricAzure/30 flex items-center justify-between">
+                <button onclick="openBookModal('twitch2')" class="text-[10px] uppercase tracking-micro font-semibold text-electricGold hover:text-alabasterLight transition-colors">
+                  Acquire Book II &rarr;
+                </button>
+                <button onclick="openExcerptModal('twitch2')" class="text-[10px] uppercase tracking-micro text-electricAzure hover:underline">
+                  Excerpt
+                </button>
+              </div>
+            </article>
+
+            <!-- Volume III -->
+            <article class="shelf-item bg-cobaltDeep/85 border border-electricAzure/45 rounded-[3px] p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[10px] uppercase tracking-micro text-electricGold font-semibold mb-4">
+                  <span>Book III &bull; Finale</span>
+                  <span>Fall 2026</span>
+                </div>
+                <button onclick="openBookModal('twitch3')" class="w-full text-left focus:outline-none">
+                  <div class="book-jacket aspect-[2/3] w-44 mx-auto bg-gradient-to-b from-plumVelvet via-cobaltRoyal to-burnishedGold rounded-[2px] p-5 flex flex-col justify-between border border-electricGold/55">
+                    <div class="pl-2">
+                      <span class="block text-[7.5px] uppercase tracking-micro text-electricGold font-semibold">The Twitch Universe</span>
+                      <div class="w-6 h-[1.5px] bg-electricGold mt-1.5"></div>
+                    </div>
+                    <div class="pl-2 my-auto">
+                      <span class="block text-[9px] uppercase tracking-widest text-electricGold font-semibold mb-1">Volume III</span>
+                      <h3 class="font-masthead text-2xl leading-tight font-bold text-alabasterLight">
+                        Still<br><span class="italic font-normal text-electricGold">Waters</span>
+                      </h3>
+                    </div>
+                    <div class="pl-2">
+                      <span class="text-[8px] uppercase tracking-micro text-cobaltDeep font-bold">General Mamba</span>
+                    </div>
+                  </div>
+                </button>
+                <h4 class="font-masthead text-2xl text-alabasterLight font-semibold mt-6">Still Waters</h4>
+                <p class="mt-2 text-xs leading-relaxed text-alabasterLight/80">
+                  Every buried frequency converges on a single midnight reckoning over who owns the city’s memory.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-electricAzure/30 flex items-center justify-between">
+                <button onclick="openBookModal('twitch3')" class="text-[10px] uppercase tracking-micro font-semibold text-electricGold hover:text-alabasterLight transition-colors">
+                  Pre-Order Finale &rarr;
+                </button>
+                <button onclick="openExcerptModal('twitch3')" class="text-[10px] uppercase tracking-micro text-electricAzure hover:underline">
+                  Excerpt
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- TAB 2: WORLD & LORE -->
+        <div id="tw-panel-lore" class="hidden pt-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-cobaltDeep/90 border border-electricAzure/45 p-6 rounded-[3px]">
+              <span class="text-[10px] uppercase tracking-micro text-electricGold font-semibold">01 &bull; The Phenomenon</span>
+              <h3 class="font-masthead text-2xl text-alabasterLight mt-2">Residual Grid Echoes</h3>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-alabasterLight/80">
+                High-voltage substations built atop older telegraph corridors store acoustic and emotional imprints during brownouts—known to locals as “the Twitch.”
+              </p>
+            </div>
+            <div class="bg-cobaltDeep/90 border border-electricGold/45 p-6 rounded-[3px]">
+              <span class="text-[10px] uppercase tracking-micro text-electricAzure font-semibold">02 &bull; The Factions</span>
+              <h3 class="font-masthead text-2xl text-alabasterLight mt-2">The Copper Choir</h3>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-alabasterLight/80">
+                An underground coalition of church sound-engineers, archivists, and line workers defending unedited neighborhood memory against GridCorp privatization.
+              </p>
+            </div>
+            <div class="bg-cobaltDeep/90 border border-electricAzure/45 p-6 rounded-[3px]">
+              <span class="text-[10px] uppercase tracking-micro text-electricGold font-semibold">03 &bull; Weekly Dossiers</span>
+              <h3 class="font-masthead text-2xl text-alabasterLight mt-2">YouTube Companion Series</h3>
+              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-alabasterLight/80">
+                Watch General Mamba break down maps, audio motifs, and hidden cross-volume connections every Thursday on <span class="text-electricGold">@GeneralMambaWrites</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: READING ORDER -->
+        <div id="tw-panel-order" class="hidden pt-12">
+          <div class="bg-cobaltDeep/90 border border-electricAzure/45 p-7 sm:p-9 rounded-[3px] max-w-3xl">
+            <p class="text-[10px] uppercase tracking-micro text-electricGold font-semibold mb-2">Recommended Reading Sequence</p>
+            <h3 class="font-masthead text-2xl sm:text-3xl text-alabasterLight">How to Enter The Twitch Universe</h3>
+            <ol class="mt-6 space-y-4 text-sm text-alabasterLight/85">
+              <li class="flex items-start gap-4">
+                <span class="bg-electricGold text-cobaltDeep font-bold text-xs px-2.5 py-0.5 rounded-[2px] shrink-0 mt-0.5">VOL. I</span>
+                <div><strong class="text-alabasterLight">The First Tremor (2024)</strong> — Start here. Introduces Darius Cole, the November blackout, and the rules of the copper lines.</div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="bg-electricAzure text-cobaltDeep font-bold text-xs px-2.5 py-0.5 rounded-[2px] shrink-0 mt-0.5">VOL. II</span>
+                <div><strong class="text-alabasterLight">High Voltage (2025)</strong> — Expands the corridor from Charleston to Baltimore as the second surge spreads.</div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="bg-electricGold text-cobaltDeep font-bold text-xs px-2.5 py-0.5 rounded-[2px] shrink-0 mt-0.5">VOL. III</span>
+                <div><strong class="text-alabasterLight">Still Waters (Fall 2026)</strong> — The concluding finale bringing every character and timeline together.</div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 'BOOKS I'VE WRITTEN' HORIZONTAL SHELF (REFERENCE INSPIRED) ==================== -->
+    <section id="books-shelf" class="py-20 sm:py-26 px-5 sm:px-10 border-b hairline-gold">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <h2 class="font-masthead text-3xl sm:text-4xl text-inkCobalt font-semibold">
+              Books I’ve Written
+            </h2>
+            <p class="mt-2 text-xs sm:text-sm text-inkSlate max-w-md">
+              The complete bibliography—spanning <span class="italic text-plumImperial">The Twitch Universe</span> trilogy, memoir, and collected essays.
+            </p>
+          </div>
+
+          <!-- Horizontal Shelf Carousel Arrows -->
+          <div class="flex items-center gap-2 self-end sm:self-auto">
+            <button onclick="scrollBookshelf(-260)" aria-label="Scroll books left" class="w-10 h-10 rounded-full border hairline-gold hover:border-cobaltRoyal flex items-center justify-center text-inkCobalt hover:bg-cobaltRoyal hover:text-alabasterLight transition-colors">
+              &larr;
+            </button>
+            <button onclick="scrollBookshelf(260)" aria-label="Scroll books right" class="w-10 h-10 rounded-full border hairline-gold hover:border-cobaltRoyal flex items-center justify-center text-inkCobalt hover:bg-cobaltRoyal hover:text-alabasterLight transition-colors">
+              &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 5-Book Horizontal Scrollable Row -->
+        <div id="shelf-track" class="no-scrollbar flex gap-6 overflow-x-auto pb-4 scroll-smooth">
+          
+          <!-- 1. Twitch Vol I -->
+          <button onclick="openBookModal('twitch1')" class="shelf-item shrink-0 w-44 sm:w-48 text-left group focus:outline-none">
+            <div class="book-jacket aspect-[2/3] w-full bg-gradient-to-br from-electricRoyal to-cobaltDeep rounded-[2px] p-4 flex flex-col justify-between text-alabasterLight">
+              <span class="pl-2 text-[7px] uppercase tracking-micro text-electricGold font-semibold">Twitch Universe I</span>
+              <div class="pl-2 my-auto">
+                <h3 class="font-masthead text-xl leading-tight font-bold text-electricGold">The First<br><span class="italic font-normal text-alabasterLight">Tremor</span></h3>
+              </div>
+              <span class="pl-2 text-[7.5px] uppercase tracking-micro text-alabasterLight/80">General Mamba</span>
+            </div>
+            <p class="mt-3 font-serif text-lg font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">The First Tremor</p>
+            <p class="text-[11px] text-inkSlate">Twitch Trilogy I &bull; 2024</p>
+          </button>
+
+          <!-- 2. Twitch Vol II -->
+          <button onclick="openBookModal('twitch2')" class="shelf-item shrink-0 w-44 sm:w-48 text-left group focus:outline-none">
+            <div class="book-jacket aspect-[2/3] w-full bg-gradient-to-br from-electricGold via-burnishedGold to-cobaltRoyal rounded-[2px] p-4 flex flex-col justify-between">
+              <span class="pl-2 text-[7px] uppercase tracking-micro text-cobaltDeep font-bold">Twitch Universe II</span>
+              <div class="pl-2 my-auto">
+                <h3 class="font-masthead text-xl leading-tight font-bold text-cobaltDeep">High<br><span class="italic font-semibold text-alabasterLight">Voltage</span></h3>
+              </div>
+              <span class="pl-2 text-[7.5px] uppercase tracking-micro text-alabasterLight font-semibold">General Mamba</span>
+            </div>
+            <p class="mt-3 font-serif text-lg font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">High Voltage</p>
+            <p class="text-[11px] text-inkSlate">Twitch Trilogy II &bull; 2025</p>
+          </button>
+
+          <!-- 3. Twitch Vol III -->
+          <button onclick="openBookModal('twitch3')" class="shelf-item shrink-0 w-44 sm:w-48 text-left group focus:outline-none">
+            <div class="book-jacket aspect-[2/3] w-full bg-gradient-to-b from-plumVelvet via-cobaltRoyal to-burnishedGold rounded-[2px] p-4 flex flex-col justify-between text-alabasterLight">
+              <span class="pl-2 text-[7px] uppercase tracking-micro text-electricGold font-semibold">Twitch Universe III</span>
+              <div class="pl-2 my-auto">
+                <h3 class="font-masthead text-xl leading-tight font-bold">Still<br><span class="italic font-normal text-electricGold">Waters</span></h3>
+              </div>
+              <span class="pl-2 text-[7.5px] uppercase tracking-micro text-cobaltDeep font-bold">General Mamba</span>
+            </div>
+            <p class="mt-3 font-serif text-lg font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">Still Waters</p>
+            <p class="text-[11px] text-inkSlate">Twitch Finale &bull; Fall 2026</p>
+          </button>
+
+          <!-- 4. The Weight of Grace -->
+          <button onclick="openBookModal('grace')" class="shelf-item shrink-0 w-44 sm:w-48 text-left group focus:outline-none">
+            <div class="book-jacket aspect-[2/3] w-full bg-plumImperial rounded-[2px] p-4 flex flex-col justify-between text-alabasterLight">
+              <span class="pl-2 text-[7px] uppercase tracking-micro text-burnishedGold font-semibold">Memoir</span>
+              <div class="pl-2 my-auto">
+                <h3 class="font-masthead text-xl leading-tight font-semibold">The Weight<br><span class="italic font-normal text-electricGold">of</span> Grace</h3>
+              </div>
+              <span class="pl-2 text-[7.5px] uppercase tracking-micro text-alabasterLight/80">General Mamba</span>
+            </div>
+            <p class="mt-3 font-serif text-lg font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">The Weight of Grace</p>
+            <p class="text-[11px] text-inkSlate">Memoir &bull; 2024</p>
+          </button>
+
+          <!-- 5. Salt & Iron -->
+          <button onclick="openBookModal('salt')" class="shelf-item shrink-0 w-44 sm:w-48 text-left group focus:outline-none">
+            <div class="book-jacket aspect-[2/3] w-full bg-cobaltRoyal rounded-[2px] p-4 flex flex-col justify-between text-alabasterLight">
+              <span class="pl-2 text-[7px] uppercase tracking-micro text-burnishedGold font-semibold">Collected Essays</span>
+              <div class="pl-2 my-auto">
+                <h3 class="font-masthead text-xl leading-tight font-semibold">Salt <span class="italic font-normal text-electricGold">&amp;</span><br>Iron</h3>
+              </div>
+              <span class="pl-2 text-[7.5px] uppercase tracking-micro text-alabasterLight/80">General Mamba</span>
+            </div>
+            <p class="mt-3 font-serif text-lg font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">Salt &amp; Iron</p>
+            <p class="text-[11px] text-inkSlate">Essays &bull; 2022</p>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BOLD YOUTUBE & SOCIAL MEDIA BROADCAST HUB ==================== -->
+    <section id="broadcasts" class="bg-alabasterWarm/85 py-20 sm:py-26 px-5 sm:px-10 border-b hairline-gold">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <p class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2">
+              YouTube Channel &amp; Social Dispatches
+            </p>
+            <h2 class="font-masthead text-3xl sm:text-4xl text-inkCobalt font-semibold">
+              Watch, listen &amp; <span class="italic font-normal text-plumImperial">follow the work</span>
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-inkSlate max-w-sm">
+            Weekly video essays, Twitch Universe lore dossiers, and direct updates from the writing desk.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- LEFT (7 cols): Prominent YouTube Channel Window -->
+          <div class="lg:col-span-7 bg-cobaltRoyal text-alabasterLight rounded-[3px] p-6 sm:p-8 border-2 border-burnishedGold/70 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                <div class="inline-flex items-center gap-3">
+                  <span class="w-9 h-6 bg-[#CC181E] rounded-[4px] flex items-center justify-center text-white text-xs font-bold shadow-xs">&#9654;</span>
+                  <div>
+                    <span class="block text-xs font-semibold tracking-wide text-alabasterLight">General Mamba on YouTube</span>
+                    <span class="block text-[10px] text-electricGold tracking-wider">@GeneralMambaWrites &bull; 48.2K Subscribers</span>
+                  </div>
+                </div>
+                <span class="text-[9.5px] uppercase tracking-micro bg-plumImperial text-electricGold border border-electricGold/40 px-2.5 py-1 rounded-[2px]">
+                  New Video Thursdays
+                </span>
+              </div>
+
+              <!-- Video Essay Preview Card -->
+              <button onclick="openVideoModal()" class="group relative w-full aspect-video rounded-[2px] overflow-hidden border border-burnishedGold/50 bg-cobaltDeep text-left focus:outline-none focus:ring-2 focus:ring-electricGold">
+                <img
+                  src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80"
+                  alt="General Mamba YouTube Episode Preview"
+                  onerror="this.src='https://placehold.co/800x450/0F2766/FAF7F0?text=Watch+Video+Essay'"
+                  class="w-full h-full object-cover opacity-55 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-cobaltDeep via-cobaltRoyal/45 to-transparent"></div>
+                
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 rounded-full bg-electricGold group-hover:bg-burnishedGold text-cobaltDeep flex items-center justify-center shadow-lg transition-all group-hover:scale-105">
+                    <span class="text-xl ml-1">&#9654;</span>
+                  </div>
+                </div>
+
+                <div class="absolute bottom-4 left-4 right-4">
+                  <span class="text-[9px] uppercase tracking-micro text-electricGold font-semibold">Featured Essay &bull; 14:28</span>
+                  <p class="font-masthead text-lg sm:text-xl text-alabasterLight leading-snug mt-0.5">
+                    Inside The Twitch Universe: Why I Wrote a Three-Part Saga
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-alabasterLight/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <span class="text-xs text-alabasterLight/80">Subscribe for chapter annotations, craft talks, and trilogy news.</span>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" onclick="showToast('Opening @GeneralMambaWrites on YouTube...')" class="shrink-0 bg-electricGold hover:bg-burnishedGold text-cobaltDeep font-bold text-[11px] uppercase tracking-micro px-5 py-3 rounded-[2px] transition-colors inline-flex items-center justify-center gap-2 shadow-sm">
+                <span>Subscribe on YouTube</span>
+                <span>&#9654;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT (5 cols): Oversized Tactile Social Media Cards -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-3.5">
+            
+            <div class="bg-alabasterLight border hairline-gold hover:border-cobaltRoyal rounded-[3px] p-5 transition-all shadow-xs flex items-center justify-between gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] uppercase tracking-micro font-bold text-[#CC181E]">YouTube</span>
+                  <span class="text-burnishedGold">&bull;</span>
+                  <span class="text-xs font-semibold text-inkCobalt">@GeneralMambaWrites</span>
+                </div>
+                <p class="text-xs text-inkSlate mt-1.5 leading-relaxed">
+                  Long-form video essays, Twitch lore breakdowns, and reading vlogs.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'YouTube')" class="shrink-0 border border-cobaltRoyal group-hover:bg-cobaltRoyal group-hover:text-alabasterLight text-cobaltRoyal text-[10px] uppercase tracking-micro font-semibold px-3.5 py-2.5 rounded-[2px] transition-colors">
+                Follow &rarr;
+              </button>
+            </div>
+
+            <div class="bg-alabasterLight border hairline-gold hover:border-plumImperial rounded-[3px] p-5 transition-all shadow-xs flex items-center justify-between gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] uppercase tracking-micro font-bold text-plumImperial">Instagram</span>
+                  <span class="text-burnishedGold">&bull;</span>
+                  <span class="text-xs font-semibold text-inkCobalt">@generalmamba.books</span>
+                </div>
+                <p class="text-xs text-inkSlate mt-1.5 leading-relaxed">
+                  Writing desk pages, bookshop tour stops, and cover drafts.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'Instagram')" class="shrink-0 border border-cobaltRoyal group-hover:bg-plumImperial group-hover:border-plumImperial group-hover:text-alabasterLight text-cobaltRoyal text-[10px] uppercase tracking-micro font-semibold px-3.5 py-2.5 rounded-[2px] transition-colors">
+                Follow &rarr;
+              </button>
+            </div>
+
+            <div class="bg-alabasterLight border hairline-gold hover:border-electricRoyal rounded-[3px] p-5 transition-all shadow-xs flex items-center justify-between gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] uppercase tracking-micro font-bold text-electricRoyal">X &amp; Threads</span>
+                  <span class="text-burnishedGold">&bull;</span>
+                  <span class="text-xs font-semibold text-inkCobalt">@generalmamba</span>
+                </div>
+                <p class="text-xs text-inkSlate mt-1.5 leading-relaxed">
+                  Daily notes on literature, culture, and live reader Q&amp;As.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'X / Threads')" class="shrink-0 border border-cobaltRoyal group-hover:bg-electricRoyal group-hover:border-electricRoyal group-hover:text-alabasterLight text-cobaltRoyal text-[10px] uppercase tracking-micro font-semibold px-3.5 py-2.5 rounded-[2px] transition-colors">
+                Follow &rarr;
+              </button>
+            </div>
+
+            <div class="bg-alabasterLight border hairline-gold hover:border-burnishedGold rounded-[3px] p-5 transition-all shadow-xs flex items-center justify-between gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] uppercase tracking-micro font-bold text-burnishedGoldDark">Substack</span>
+                  <span class="text-burnishedGold">&bull;</span>
+                  <span class="text-xs font-semibold text-inkCobalt">Dispatches by General Mamba</span>
+                </div>
+                <p class="text-xs text-inkSlate mt-1.5 leading-relaxed">
+                  Extended manuscript notes, reading lists, and book club guides.
+                </p>
+              </div>
+              <button onclick="toggleFollow(this, 'Substack')" class="shrink-0 border border-cobaltRoyal group-hover:bg-electricGold group-hover:border-electricGold group-hover:text-cobaltDeep text-cobaltRoyal text-[10px] uppercase tracking-micro font-semibold px-3.5 py-2.5 rounded-[2px] transition-colors">
+                Follow &rarr;
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== UPCOMING READINGS & MONTHLY LETTERS ==================== -->
+    <section id="events" class="py-20 sm:py-24 px-5 sm:px-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-baseline justify-between mb-6">
+          <h2 class="font-masthead text-2xl sm:text-3xl text-inkCobalt font-semibold">
+            <span class="italic font-normal text-plumImperial">Come</span> say hello
+          </h2>
+          <span class="text-[10px] uppercase tracking-micro text-burnishedGoldDark font-semibold">2026 Reading Tour</span>
+        </div>
+
+        <div class="border-t hairline-gold divide-y hairline-gold">
+          <div class="py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 group">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-10">
+              <span class="font-serif text-lg font-semibold text-plumImperial w-24 shrink-0">Dec 05</span>
+              <span class="text-xs sm:text-sm font-medium text-inkCobalt w-40 shrink-0">Brooklyn, NY</span>
+              <span class="text-xs sm:text-sm text-inkSlate">Greenlight Bookstore &bull; The Twitch Universe Launch</span>
+            </div>
+            <button onclick="openRsvpModal('Dec 05 — Brooklyn, NY', 'Greenlight Bookstore')" class="self-start sm:self-auto text-[10px] uppercase tracking-micro font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">
+              RSVP <span class="text-burnishedGold">&rarr;</span>
+            </button>
+          </div>
+
+          <div class="py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 group">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-10">
+              <span class="font-serif text-lg font-semibold text-plumImperial w-24 shrink-0">Jan 18</span>
+              <span class="text-xs sm:text-sm font-medium text-inkCobalt w-40 shrink-0">Chicago, IL</span>
+              <span class="text-xs sm:text-sm text-inkSlate">Seminary Co-op Bookstores &bull; Reading &amp; Signing</span>
+            </div>
+            <button onclick="openRsvpModal('Jan 18 — Chicago, IL', 'Seminary Co-op Bookstores')" class="self-start sm:self-auto text-[10px] uppercase tracking-micro font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">
+              RSVP <span class="text-burnishedGold">&rarr;</span>
+            </button>
+          </div>
+
+          <div class="py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 group">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-10">
+              <span class="font-serif text-lg font-semibold text-plumImperial w-24 shrink-0">Feb 09</span>
+              <span class="text-xs sm:text-sm font-medium text-inkCobalt w-40 shrink-0">Atlanta, GA</span>
+              <span class="text-xs sm:text-sm text-inkSlate">Auburn Avenue Research Library &bull; Evening Conversation</span>
+            </div>
+            <button onclick="openRsvpModal('Feb 09 — Atlanta, GA', 'Auburn Avenue Research Library')" class="self-start sm:self-auto text-[10px] uppercase tracking-micro font-semibold text-inkCobalt group-hover:text-plumImperial transition-colors">
+              RSVP <span class="text-burnishedGold">&rarr;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Minimalist Monthly Letters Signup -->
+        <div id="newsletter" class="mt-20 pt-16 border-t hairline-gold max-w-lg mx-auto text-center">
+          <h3 class="font-masthead text-3xl text-inkCobalt font-semibold">
+            Letters, <span class="italic font-normal text-plumImperial">once a month</span>
+          </h3>
+          <p class="mt-2.5 text-xs sm:text-sm text-inkSlate leading-relaxed">
+            Unpublished notes, Twitch Universe dispatches, and essays on faith and craft. Sent on the first Sunday of each month.
+          </p>
+
+          <form onsubmit="handleSubscribe(event)" class="mt-7 flex items-center border-b border-burnishedGold/70 focus-within:border-plumImperial pb-2 transition-colors">
+            <label for="email-input" class="sr-only">Email address</label>
+            <input
+              id="email-input"
+              type="email"
+              required
+              placeholder="Your email address"
+              class="w-full bg-transparent text-sm text-inkCobalt placeholder-inkSlate/60 focus:outline-none pr-4"
+            />
+            <button type="submit" class="shrink-0 text-[10px] uppercase tracking-micro font-semibold text-plumImperial hover:text-cobaltRoyal transition-colors">
+              Subscribe <span class="text-burnishedGold">&rarr;</span>
+            </button>
+          </form>
+          <p id="newsletter-feedback" class="hidden mt-3 text-xs font-serif italic text-plumImperial"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== IMPERIAL PLUM & BURNISHED GOLD FOOTER ==================== -->
+  <footer class="bg-plumImperial text-alabasterLight/90 py-10 px-6 text-[10px] uppercase tracking-micro border-t-2 border-burnishedGold/70">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <span class="font-serif text-base font-semibold tracking-wordmark text-electricGold">General Mamba</span>
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-alabasterLight">
+        <a href="#twitch-showcase" class="text-electricGold hover:underline font-semibold">The Twitch Universe</a>
+        <a href="#broadcasts" class="hover:text-electricGold transition-colors">YouTube (@GeneralMambaWrites)</a>
+        <a href="#broadcasts" class="hover:text-electricGold transition-colors">Instagram</a>
+        <a href="#broadcasts" class="hover:text-electricGold transition-colors">Substack</a>
+      </div>
+      <span class="text-alabasterLight/70">&copy; 2026 General Mamba</span>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS (VIDEO, EXCERPT, BOOK ORDER, RSVP) ==================== -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-cobaltDeep/75 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-cobaltRoyal max-w-2xl w-full rounded-[3px] shadow-2xl border-2 border-burnishedGold/75 p-6 sm:p-8 relative text-alabasterLight">
+      <button onclick="closeModal('video-modal')" aria-label="Close video preview" class="absolute top-4 right-5 text-alabasterLight/75 hover:text-electricGold text-2xl leading-none">&times;</button>
+      <p class="text-[10px] uppercase tracking-micro text-electricGold font-semibold mb-1">YouTube Channel &bull; @GeneralMambaWrites</p>
+      <h3 class="font-masthead text-2xl sm:text-3xl text-alabasterLight mb-4">Inside The Twitch Universe: Why I Wrote a Three-Part Saga</h3>
+      <div class="aspect-video w-full bg-cobaltDeep rounded-[2px] border border-electricAzure/45 flex flex-col items-center justify-center p-6 text-center">
+        <div class="w-14 h-14 rounded-full bg-electricGold text-cobaltDeep flex items-center justify-center text-lg font-bold mb-3">&#9654;</div>
+        <p class="font-serif italic text-xl text-alabasterLight max-w-md">“Every trilogy starts with a single voice trapped inside the static...”</p>
+        <p class="text-xs text-alabasterLight/70 mt-2">Ready for your official YouTube video embed ID.</p>
+      </div>
+      <div class="mt-5 flex flex-wrap items-center justify-between gap-4">
+        <span class="text-xs text-alabasterLight/75">New essays &amp; Twitch lore episodes every Thursday.</span>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="bg-electricGold hover:bg-burnishedGold text-cobaltDeep font-bold text-[10px] uppercase tracking-micro px-5 py-2.5 rounded-[2px] transition-colors">Open on YouTube &nearr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="excerpt-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-cobaltDeep/65 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-alabasterLight max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-[2px] shadow-2xl border hairline-gold p-7 sm:p-12 relative">
+      <button onclick="closeModal('excerpt-modal')" aria-label="Close excerpt" class="absolute top-5 right-6 text-inkSlate hover:text-plumImperial text-xl leading-none">&times;</button>
+      <p id="excerpt-kicker" class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2">Excerpt &bull; Chapter One</p>
+      <h3 id="excerpt-title" class="font-masthead text-3xl text-inkCobalt font-semibold mb-6">The First Tremor</h3>
+      <div id="excerpt-body" class="space-y-4 font-serif text-lg sm:text-xl leading-relaxed text-inkCobalt/90"></div>
+      <div class="mt-8 pt-6 border-t hairline-gold flex items-center justify-between">
+        <span class="text-[10px] uppercase tracking-micro text-inkSlate">Farrar, Straus &amp; Giroux</span>
+        <button id="excerpt-order-cta" onclick="closeModal('excerpt-modal'); openBookModal('twitch1')" class="bg-burnishedGold hover:bg-electricGold text-cobaltDeep text-[10px] uppercase tracking-micro font-bold px-5 py-2.5 rounded-[2px] transition-colors">Acquire Hardcover &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="book-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-cobaltDeep/65 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-alabasterLight max-w-lg w-full rounded-[2px] shadow-2xl border hairline-gold p-7 sm:p-9 relative">
+      <button onclick="closeModal('book-modal')" aria-label="Close modal" class="absolute top-5 right-6 text-inkSlate hover:text-plumImperial text-xl leading-none">&times;</button>
+      <p id="modal-book-meta" class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2"></p>
+      <h3 id="modal-book-title" class="font-masthead text-3xl text-inkCobalt font-semibold mb-3"></h3>
+      <p id="modal-book-desc" class="text-sm leading-relaxed text-inkSlate mb-6"></p>
+      <p class="text-[10px] uppercase tracking-micro text-inkCobalt font-semibold mb-3">Select a Bookseller</p>
+      <div class="grid grid-cols-2 gap-2.5 text-xs text-inkCobalt">
+        <button onclick="showToast('Opening Bookshop.org in a new tab...'); closeModal('book-modal')" class="border hairline-gold hover:border-plumImperial py-2.5 px-3 text-left flex justify-between items-center transition-colors"><span>Bookshop.org</span><span class="text-burnishedGold">&nearr;</span></button>
+        <button onclick="showToast('Opening Barnes & Noble in a new tab...'); closeModal('book-modal')" class="border hairline-gold hover:border-plumImperial py-2.5 px-3 text-left flex justify-between items-center transition-colors"><span>Barnes &amp; Noble</span><span class="text-burnishedGold">&nearr;</span></button>
+        <button onclick="showToast('Opening IndieBound local search...'); closeModal('book-modal')" class="border hairline-gold hover:border-plumImperial py-2.5 px-3 text-left flex justify-between items-center transition-colors"><span>Local Indie</span><span class="text-burnishedGold">&nearr;</span></button>
+        <button onclick="showToast('Opening Libro.fm Audiobook...'); closeModal('book-modal')" class="border hairline-gold hover:border-plumImperial py-2.5 px-3 text-left flex justify-between items-center transition-colors"><span>Libro.fm Audio</span><span class="text-burnishedGold">&nearr;</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="rsvp-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-cobaltDeep/65 backdrop-blur-xs p-4 sm:p-6" role="dialog" aria-modal="true">
+    <div class="bg-alabasterLight max-w-md w-full rounded-[2px] shadow-2xl border hairline-gold p-7 sm:p-9 relative">
+      <button onclick="closeModal('rsvp-modal')" aria-label="Close RSVP" class="absolute top-5 right-6 text-inkSlate hover:text-plumImperial text-xl leading-none">&times;</button>
+      <p class="text-[10px] uppercase tracking-micro text-plumImperial font-semibold mb-2">Reading &amp; Conversation</p>
+      <h3 id="rsvp-event-title" class="font-masthead text-2xl text-inkCobalt font-semibold mb-1"></h3>
+      <p id="rsvp-event-venue" class="text-xs text-inkSlate mb-6"></p>
+      <form onsubmit="submitRsvp(event)" class="space-y-4">
+        <div>
+          <label class="block text-[10px] uppercase tracking-micro text-inkSlate mb-1">Full Name</label>
+          <input type="text" required placeholder="James Baldwin" class="w-full bg-transparent border-b border-burnishedGold/60 focus:border-plumImperial py-2 text-sm text-inkCobalt focus:outline-none" />
+        </div>
+        <div>
+          <label class="block text-[10px] uppercase tracking-micro text-inkSlate mb-1">Email for Seat Confirmation</label>
+          <input type="email" required placeholder="reader@example.com" class="w-full bg-transparent border-b border-burnishedGold/60 focus:border-plumImperial py-2 text-sm text-inkCobalt focus:outline-none" />
+        </div>
+        <button type="submit" class="w-full mt-2 bg-plumImperial hover:bg-plumVelvet text-alabasterLight text-[11px] uppercase tracking-micro font-semibold py-3 rounded-[2px] transition-colors">Reserve Seat</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-cobaltDeep text-alabasterLight text-xs px-4 py-3 rounded-[2px] shadow-lg border border-electricGold/60"></div>
+
+  <script>
+    const catalog = {
+      twitch1: {
+        meta: "The Twitch Universe • Book I • 2024",
+        title: "The First Tremor",
+        note: "<strong>Book I — The First Tremor (2024):</strong> When a November substation collapse plunges three coastal wards into darkness, archivist Darius Cole hears his late brother’s voice broadcasting through unpowered copper lines.",
+        btnLabel: "Order Volume I →",
+        desc: "When a November substation collapse plunges three coastal wards into darkness, former radio archivist Darius Cole discovers that the copper lines are replaying voices from twenty years earlier—including his late brother’s final broadcast.",
+        excerpt: [
+          "The substation on Fourth Street hummed at sixty cycles per second until the night it didn’t, and in the sudden silence that followed, the copper wires began to speak.",
+          "Darius Cole sat with both hands pressed flat against his mixing console, listening to a voice recorded in 1998 drift cleanly through dead speakers—unplugged, unpowered, and unmistakable.",
+          "“If you’re still keeping the log,” his brother said through the static, “don’t let them tell you the city forgot.”"
+        ]
+      },
+      twitch2: {
+        meta: "The Twitch Universe • Book II • 2025",
+        title: "High Voltage",
+        note: "<strong>Book II — High Voltage (2025):</strong> Pursued from Charleston to Baltimore, the underground sound-keepers of the Copper Choir must decode a second surge before GridCorp privatizes the corridor.",
+        btnLabel: "Order Volume II →",
+        desc: "Pursued from Charleston to Baltimore, the underground sound-keepers of the Copper Choir must decode a second, stronger surge before GridCorp privatizes the entire Eastern corridor.",
+        excerpt: [
+          "By February, every church basement between Savannah and Wilmington had at least one reel-to-reel deck tuned to the low-frequency band.",
+          "You could not buy the signal on a commercial receiver. You had to splice copper wire to a radiator pipe and wait for rain to soften the ground.",
+          "“They think memory is an archive,” Miriam told the room, locking the steel door behind her. “They haven’t realized it’s a circuit.”"
+        ]
+      },
+      twitch3: {
+        meta: "The Twitch Universe • Book III (Finale) • Fall 2026",
+        title: "Still Waters",
+        note: "<strong>Book III — Still Waters (Fall 2026):</strong> The explosive finale. Every buried frequency converges on a single midnight reckoning over who owns the city’s memory.",
+        btnLabel: "Pre-Order Finale →",
+        desc: "In the sweeping conclusion to The Twitch Universe trilogy, every buried frequency converges on a single night—forcing Darius Cole to choose between preserving the past and setting the living free.",
+        excerpt: [
+          "At low tide, the pilings beneath the old Cooper River bridge carried the faintest vibration, like a cello string plucked three counties away.",
+          "Darius carried the final master tape in a waxed canvas satchel, knowing that once the breakers were thrown at midnight, there would be no second recording.",
+          "Some truths were meant to be kept in vaults; others were meant to flood the street."
+        ]
+      },
+      grace: {
+        meta: "Memoir • 2024 • Farrar, Straus & Giroux",
+        title: "The Weight of Grace",
+        desc: "A candid, deeply moving memoir examining fatherhood, church heritage, and the unspoken emotional ledgers carried by Black men across generations.",
+        excerpt: [
+          "My father kept his Sunday shoes in a cedar box beneath the floorboards of the hall closet, wrapped in torn sheets of the Charleston News and Courier.",
+          "“A man is judged first by what holds him up,” he told me once, not looking up from his rag. He did not mean leather or Goodyear welts. He meant posture.",
+          "It took me thirty years to understand that silence is its own kind of weight—and that setting it down is the beginning of grace."
+        ]
+      },
+      salt: {
+        meta: "Collected Essays • 2022 • Graywolf Press",
+        title: "Salt & Iron",
+        desc: "Twelve essays on American memory, Southern landscapes, music, and the rituals that sustain communities through seasons of upheaval."
+      }
+    };
+
+    // Interactive 'SELECT:' Category Tabs
+    function switchEditorialTab(tabKey) {
+      ['twitch', 'books', 'youtube', 'bio'].forEach(key => {
+        const panel = document.getElementById(`ed-panel-${key}`);
+        const btn = document.getElementById(`sel-tab-${key}`);
+        if (key === tabKey) {
+          panel.classList.remove('hidden');
+          btn.className = 'font-masthead text-2xl sm:text-4xl font-bold text-inkCobalt border-b-2 border-burnishedGold pb-1 transition-all';
+        } else {
+          panel.classList.add('hidden');
+          btn.className = 'font-masthead text-2xl sm:text-4xl font-medium text-inkSlate/60 hover:text-plumImperial pb-1 transition-all';
+        }
+      });
+    }
+
+    // Mini Volume Pills inside the Twitch Spotlight Panel
+    function setMiniVolume(volKey) {
+      const vol = catalog[volKey];
+      if (!vol) return;
+      ['twitch1', 'twitch2', 'twitch3'].forEach(key => {
+        const pill = document.getElementById(`mini-pill-${key}`);
+        if (key === volKey) {
+          pill.className = 'bg-cobaltRoyal text-electricGold font-semibold text-[10px] uppercase tracking-micro px-3.5 py-2 rounded-[2px] transition-colors';
+        } else {
+          pill.className = 'bg-alabasterWarm hover:bg-cobaltRoyal/10 text-inkCobalt font-medium text-[10px] uppercase tracking-micro px-3.5 py-2 rounded-[2px] transition-colors';
+        }
+      });
+      document.getElementById('mini-volume-note').innerHTML = vol.note;
+      const orderBtn = document.getElementById('mini-order-btn');
+      orderBtn.textContent = vol.btnLabel;
+      orderBtn.setAttribute('onclick', `openBookModal('${volKey}')`);
+      document.getElementById('mini-excerpt-btn').setAttribute('onclick', `openExcerptModal('${volKey}')`);
+    }
+
+    // Dedicated Twitch Showcase Tabs
+    function switchTwitchSectionTab(tabName) {
+      ['trilogy', 'lore', 'order'].forEach(name => {
+        const panel = document.getElementById(`tw-panel-${name}`);
+        const btn = document.getElementById(`tw-tab-${name}`);
+        if (name === tabName) {
+          panel.classList.remove('hidden');
+          btn.className = 'bg-electricGold text-cobaltDeep font-bold text-[10px] uppercase tracking-micro px-4 py-2.5 rounded-[2px] transition-all';
+        } else {
+          panel.classList.add('hidden');
+          btn.className = 'bg-cobaltDeep/80 text-alabasterLight border border-electricAzure/50 hover:border-electricGold font-medium text-[10px] uppercase tracking-micro px-4 py-2.5 rounded-[2px] transition-all';
+        }
+      });
+    }
+
+    // Horizontal Bookshelf Scroll
+    function scrollBookshelf(offset) {
+      const track = document.getElementById('shelf-track');
+      track.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+
+    // Social Follow Toggle
+    function toggleFollow(btn, platform) {
+      const isFollowing = btn.dataset.following === 'true';
+      if (!isFollowing) {
+        btn.dataset.following = 'true';
+        btn.textContent = 'Following ✓';
+        btn.classList.add('bg-cobaltRoyal', 'text-alabasterLight', 'border-cobaltRoyal');
+        showToast(`Following General Mamba on ${platform}`);
+      } else {
+        btn.dataset.following = 'false';
+        btn.textContent = 'Follow →';
+        btn.classList.remove('bg-cobaltRoyal', 'text-alabasterLight', 'border-cobaltRoyal');
+      }
+    }
+
+    // Modals
+    function openBookModal(bookKey) {
+      const book = catalog[bookKey];
+      if (!book) return;
+      document.getElementById('modal-book-meta').textContent = book.meta;
+      document.getElementById('modal-book-title').textContent = book.title;
+      document.getElementById('modal-book-desc').textContent = book.desc;
+      openModal('book-modal');
+    }
+
+    function openExcerptModal(bookKey) {
+      const book = catalog[bookKey] || catalog.twitch1;
+      document.getElementById('excerpt-kicker').textContent = `Excerpt • ${book.meta}`;
+      document.getElementById('excerpt-title').textContent = book.title;
+      const bodyEl = document.getElementById('excerpt-body');
+      const paragraphs = book.excerpt || catalog.twitch1.excerpt;
+      bodyEl.innerHTML = paragraphs.map((p, i) => {
+        if (i === 0) {
+          return `<p><span class="float-left font-masthead text-5xl leading-[0.8] pr-3 pt-1 text-plumImperial">${p.charAt(0)}</span>${p.slice(1)}</p>`;
+        }
+        return `<p>${p}</p>`;
+      }).join('');
+      document.getElementById('excerpt-order-cta').setAttribute('onclick', `closeModal('excerpt-modal'); openBookModal('${bookKey}')`);
+      openModal('excerpt-modal');
+    }
+
+    function openVideoModal() {
+      openModal('video-modal');
+    }
+
+    function openRsvpModal(title, venue) {
+      document.getElementById('rsvp-event-title').textContent = title;
+      document.getElementById('rsvp-event-venue').textContent = venue;
+      openModal('rsvp-modal');
+    }
+
+    function openModal(id) {
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+
+    window.addEventListener('click', (e) => {
+      ['excerpt-modal', 'book-modal', 'rsvp-modal', 'video-modal'].forEach(id => {
+        if (e.target === document.getElementById(id)) closeModal(id);
+      });
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        ['excerpt-modal', 'book-modal', 'rsvp-modal', 'video-modal'].forEach(closeModal);
+      }
+    });
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const input = document.getElementById('email-input');
+      const feedback = document.getElementById('newsletter-feedback');
+      feedback.textContent = `Thank you. ${input.value} has been added to the monthly letter.`;
+      feedback.classList.remove('hidden');
+      input.value = '';
+    }
+
+    function submitRsvp(e) {
+      e.preventDefault();
+      closeModal('rsvp-modal');
+      showToast('Your seat has been reserved. Check your inbox for details.');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+  </script>
+</body>
+</html>
